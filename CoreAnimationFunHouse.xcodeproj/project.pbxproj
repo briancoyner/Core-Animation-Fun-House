@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D0060411435FB2700615004 /* BTSPulseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0060401435FB2700615004 /* BTSPulseViewController.m */; };
+		5D31F6ED143BEA0E008ECE3D /* BTSReflectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */; };
+		5D31F703143D1FD7008ECE3D /* BTSWiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */; };
+		5D422D671440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */; };
+		5D422D6A1440ECA800F85498 /* BTSPathAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D422D691440ECA800F85498 /* BTSPathAnimationViewController.m */; };
+		5D69A4821442256E00B98A2D /* BTSBezierPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */; };
+		5D69A4861442735400B98A2D /* BTSCubicBezierPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69A4851442735400B98A2D /* BTSCubicBezierPathView.m */; };
+		5D6FBC66142BB9A80015A945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6FBC65142BB9A80015A945 /* UIKit.framework */; };
+		5D6FBC68142BB9A80015A945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6FBC67142BB9A80015A945 /* Foundation.framework */; };
+		5D6FBC6A142BB9A80015A945 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6FBC69142BB9A80015A945 /* CoreGraphics.framework */; };
+		5D6FBC70142BB9A80015A945 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FBC6E142BB9A80015A945 /* InfoPlist.strings */; };
+		5D6FBC72142BB9A80015A945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6FBC71142BB9A80015A945 /* main.m */; };
+		5D6FBC76142BB9A80015A945 /* BTSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6FBC75142BB9A80015A945 /* BTSAppDelegate.m */; };
+		5D6FBC79142BB9A80015A945 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FBC77142BB9A80015A945 /* MainStoryboard.storyboard */; };
+		5D6FBC84142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6FBC83142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m */; };
+		5D6FBC86142BBB2F0015A945 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6FBC85142BBB2F0015A945 /* QuartzCore.framework */; };
+		5D9396541447C7270049EBBC /* BTSAnchorPointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */; };
+		5DFB0B4B1448A74D001DF61F /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB0B4A1448A74D001DF61F /* readme.md */; };
+		5DFB0B4E1448A915001DF61F /* american-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB0B4C1448A915001DF61F /* american-flag.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5D00603F1435FB2700615004 /* BTSPulseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSPulseViewController.h; sourceTree = "<group>"; };
+		5D0060401435FB2700615004 /* BTSPulseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSPulseViewController.m; sourceTree = "<group>"; };
+		5D31F6EB143BEA0E008ECE3D /* BTSReflectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSReflectionViewController.h; sourceTree = "<group>"; };
+		5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSReflectionViewController.m; sourceTree = "<group>"; };
+		5D31F701143D1FD7008ECE3D /* BTSWiggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSWiggleViewController.h; sourceTree = "<group>"; };
+		5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSWiggleViewController.m; sourceTree = "<group>"; };
+		5D422D651440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CALayer_WiggleAnimationAdditions.h"; sourceTree = "<group>"; };
+		5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CALayer_WiggleAnimationAdditions.m"; sourceTree = "<group>"; };
+		5D422D681440ECA800F85498 /* BTSPathAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSPathAnimationViewController.h; sourceTree = "<group>"; };
+		5D422D691440ECA800F85498 /* BTSPathAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSPathAnimationViewController.m; sourceTree = "<group>"; };
+		5D69A4801442256E00B98A2D /* BTSBezierPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSBezierPathViewController.h; sourceTree = "<group>"; };
+		5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSBezierPathViewController.m; sourceTree = "<group>"; };
+		5D69A4841442735400B98A2D /* BTSCubicBezierPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSCubicBezierPathView.h; sourceTree = "<group>"; };
+		5D69A4851442735400B98A2D /* BTSCubicBezierPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSCubicBezierPathView.m; sourceTree = "<group>"; };
+		5D6FBC61142BB9A80015A945 /* CoreAnimationFunHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationFunHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D6FBC65142BB9A80015A945 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5D6FBC67142BB9A80015A945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5D6FBC69142BB9A80015A945 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5D6FBC6D142BB9A80015A945 /* CoreAnimationFunHouse-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreAnimationFunHouse-Info.plist"; sourceTree = "<group>"; };
+		5D6FBC6F142BB9A80015A945 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5D6FBC71142BB9A80015A945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5D6FBC73142BB9A80015A945 /* CoreAnimationFunHouse-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreAnimationFunHouse-Prefix.pch"; sourceTree = "<group>"; };
+		5D6FBC74142BB9A80015A945 /* BTSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSAppDelegate.h; sourceTree = "<group>"; };
+		5D6FBC75142BB9A80015A945 /* BTSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSAppDelegate.m; sourceTree = "<group>"; };
+		5D6FBC78142BB9A80015A945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5D6FBC82142BBA430015A945 /* BTSBasicLayerPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSBasicLayerPropertiesViewController.h; sourceTree = "<group>"; };
+		5D6FBC83142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSBasicLayerPropertiesViewController.m; sourceTree = "<group>"; };
+		5D6FBC85142BBB2F0015A945 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5D9396521447C7270049EBBC /* BTSAnchorPointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSAnchorPointLayer.h; sourceTree = "<group>"; };
+		5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSAnchorPointLayer.m; sourceTree = "<group>"; };
+		5DFB0B4A1448A74D001DF61F /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
+		5DFB0B4D1448A915001DF61F /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/american-flag.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D6FBC5E142BB9A80015A945 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6FBC86142BBB2F0015A945 /* QuartzCore.framework in Frameworks */,
+				5D6FBC66142BB9A80015A945 /* UIKit.framework in Frameworks */,
+				5D6FBC68142BB9A80015A945 /* Foundation.framework in Frameworks */,
+				5D6FBC6A142BB9A80015A945 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D6FBC56142BB9A80015A945 = {
+			isa = PBXGroup;
+			children = (
+				5DFB0B4A1448A74D001DF61F /* readme.md */,
+				5D6FBC6B142BB9A80015A945 /* CoreAnimationFunHouse */,
+				5D6FBC6C142BB9A80015A945 /* Supporting Files */,
+				5D6FBC64142BB9A80015A945 /* Frameworks */,
+				5D6FBC62142BB9A80015A945 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D6FBC62142BB9A80015A945 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D6FBC61142BB9A80015A945 /* CoreAnimationFunHouse.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D6FBC64142BB9A80015A945 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D6FBC85142BBB2F0015A945 /* QuartzCore.framework */,
+				5D6FBC65142BB9A80015A945 /* UIKit.framework */,
+				5D6FBC67142BB9A80015A945 /* Foundation.framework */,
+				5D6FBC69142BB9A80015A945 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D6FBC6B142BB9A80015A945 /* CoreAnimationFunHouse */ = {
+			isa = PBXGroup;
+			children = (
+				5D6FBC77142BB9A80015A945 /* MainStoryboard.storyboard */,
+				5D6FBC74142BB9A80015A945 /* BTSAppDelegate.h */,
+				5D6FBC75142BB9A80015A945 /* BTSAppDelegate.m */,
+				5D6FBC82142BBA430015A945 /* BTSBasicLayerPropertiesViewController.h */,
+				5D6FBC83142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m */,
+				5D00603F1435FB2700615004 /* BTSPulseViewController.h */,
+				5D0060401435FB2700615004 /* BTSPulseViewController.m */,
+				5D31F6EB143BEA0E008ECE3D /* BTSReflectionViewController.h */,
+				5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */,
+				5D31F701143D1FD7008ECE3D /* BTSWiggleViewController.h */,
+				5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */,
+				5D422D651440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.h */,
+				5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */,
+				5D422D681440ECA800F85498 /* BTSPathAnimationViewController.h */,
+				5D422D691440ECA800F85498 /* BTSPathAnimationViewController.m */,
+				5D69A4801442256E00B98A2D /* BTSBezierPathViewController.h */,
+				5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */,
+				5D69A4841442735400B98A2D /* BTSCubicBezierPathView.h */,
+				5D69A4851442735400B98A2D /* BTSCubicBezierPathView.m */,
+				5D9396521447C7270049EBBC /* BTSAnchorPointLayer.h */,
+				5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */,
+			);
+			path = CoreAnimationFunHouse;
+			sourceTree = "<group>";
+		};
+		5D6FBC6C142BB9A80015A945 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DFB0B4C1448A915001DF61F /* american-flag.png */,
+				5D6FBC6D142BB9A80015A945 /* CoreAnimationFunHouse-Info.plist */,
+				5D6FBC6E142BB9A80015A945 /* InfoPlist.strings */,
+				5D6FBC71142BB9A80015A945 /* main.m */,
+				5D6FBC73142BB9A80015A945 /* CoreAnimationFunHouse-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = CoreAnimationFunHouse;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D6FBC60142BB9A80015A945 /* CoreAnimationFunHouse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D6FBC7F142BB9A80015A945 /* Build configuration list for PBXNativeTarget "CoreAnimationFunHouse" */;
+			buildPhases = (
+				5D6FBC5D142BB9A80015A945 /* Sources */,
+				5D6FBC5E142BB9A80015A945 /* Frameworks */,
+				5D6FBC5F142BB9A80015A945 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreAnimationFunHouse;
+			productName = CoreAnimationFunHouse;
+			productReference = 5D6FBC61142BB9A80015A945 /* CoreAnimationFunHouse.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D6FBC58142BB9A80015A945 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Black Software, Inc.";
+			};
+			buildConfigurationList = 5D6FBC5B142BB9A80015A945 /* Build configuration list for PBXProject "CoreAnimationFunHouse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5D6FBC56142BB9A80015A945;
+			productRefGroup = 5D6FBC62142BB9A80015A945 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D6FBC60142BB9A80015A945 /* CoreAnimationFunHouse */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D6FBC5F142BB9A80015A945 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6FBC70142BB9A80015A945 /* InfoPlist.strings in Resources */,
+				5D6FBC79142BB9A80015A945 /* MainStoryboard.storyboard in Resources */,
+				5DFB0B4B1448A74D001DF61F /* readme.md in Resources */,
+				5DFB0B4E1448A915001DF61F /* american-flag.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D6FBC5D142BB9A80015A945 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6FBC72142BB9A80015A945 /* main.m in Sources */,
+				5D6FBC76142BB9A80015A945 /* BTSAppDelegate.m in Sources */,
+				5D6FBC84142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m in Sources */,
+				5D0060411435FB2700615004 /* BTSPulseViewController.m in Sources */,
+				5D31F6ED143BEA0E008ECE3D /* BTSReflectionViewController.m in Sources */,
+				5D31F703143D1FD7008ECE3D /* BTSWiggleViewController.m in Sources */,
+				5D422D671440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m in Sources */,
+				5D422D6A1440ECA800F85498 /* BTSPathAnimationViewController.m in Sources */,
+				5D69A4821442256E00B98A2D /* BTSBezierPathViewController.m in Sources */,
+				5D69A4861442735400B98A2D /* BTSCubicBezierPathView.m in Sources */,
+				5D9396541447C7270049EBBC /* BTSAnchorPointLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5D6FBC6E142BB9A80015A945 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D6FBC6F142BB9A80015A945 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5D6FBC77142BB9A80015A945 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D6FBC78142BB9A80015A945 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		5DFB0B4C1448A915001DF61F /* american-flag.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DFB0B4D1448A915001DF61F /* en */,
+			);
+			name = "american-flag.png";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5D6FBC7D142BB9A80015A945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5D6FBC7E142BB9A80015A945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5D6FBC80142BB9A80015A945 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreAnimationFunHouse/CoreAnimationFunHouse-Prefix.pch";
+				INFOPLIST_FILE = "CoreAnimationFunHouse/CoreAnimationFunHouse-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5D6FBC81142BB9A80015A945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoreAnimationFunHouse/CoreAnimationFunHouse-Prefix.pch";
+				INFOPLIST_FILE = "CoreAnimationFunHouse/CoreAnimationFunHouse-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D6FBC5B142BB9A80015A945 /* Build configuration list for PBXProject "CoreAnimationFunHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6FBC7D142BB9A80015A945 /* Debug */,
+				5D6FBC7E142BB9A80015A945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D6FBC7F142BB9A80015A945 /* Build configuration list for PBXNativeTarget "CoreAnimationFunHouse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6FBC80142BB9A80015A945 /* Debug */,
+				5D6FBC81142BB9A80015A945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D6FBC58142BB9A80015A945 /* Project object */;
+}
