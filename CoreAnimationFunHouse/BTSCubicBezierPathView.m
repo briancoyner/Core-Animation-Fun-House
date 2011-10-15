@@ -44,8 +44,9 @@
     NSArray *_hitTestLayers;
 }
 
+CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer, CALayer *endPointLayer, CALayer *beginPointControlPointLayer, CALayer *endPointControlPointLayer);
+
 - (void)initLayers;
-- (CGPathRef)createPathForCurrentControlPointPositions;
 
 @end
 
@@ -124,7 +125,7 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
         [layerToMove setPosition:newPosition];
     }
     
-    CGPathRef path = [self createPathForCurrentControlPointPositions];
+    CGPathRef path = BTSPathCreateForCurrentControlPointPositions(_beginPointLayer, _endPointLayer, _beginPointControlPointLayer, _endPointControlPointLayer);
     [_shapeLayer setPath:path];
     CFRelease(path);
 }
@@ -165,7 +166,7 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
     [_endPointControlPointLayer setPosition:CGPointMake([self bounds].size.width - 40, midY)];
     
     // create the initial path
-    CGPathRef path = [self createPathForCurrentControlPointPositions];
+    CGPathRef path = BTSPathCreateForCurrentControlPointPositions(_beginPointLayer, _endPointLayer, _beginPointControlPointLayer, _endPointControlPointLayer);
     
     _shapeLayer = [CAShapeLayer layer];
     [_shapeLayer setPath:path];
@@ -185,11 +186,11 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
 }
 
 // ownership is transferred to the caller
-- (CGPathRef)createPathForCurrentControlPointPositions
+CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer, CALayer *endPointLayer, CALayer *beginPointControlPointLayer, CALayer *endPointControlPointLayer)
 {
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL, [_beginPointLayer position].x, [_beginPointLayer position].y);
-    CGPathAddCurveToPoint(path, NULL, [_beginPointControlPointLayer position].x, [_beginPointControlPointLayer position].y, [_endPointControlPointLayer position].x, [_endPointControlPointLayer position].y, [_endPointLayer position].x, [_endPointLayer position].y);
+    CGPathMoveToPoint(path, NULL, [beginPointLayer position].x, [beginPointLayer position].y);
+    CGPathAddCurveToPoint(path, NULL, [beginPointControlPointLayer position].x, [beginPointControlPointLayer position].y, [endPointControlPointLayer position].x, [endPointControlPointLayer position].y, [endPointLayer position].x, [endPointLayer position].y);
     return path;
     
 }
