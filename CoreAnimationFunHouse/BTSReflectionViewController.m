@@ -159,8 +159,7 @@
 }
 
 - (void)animateTextLayer:(UIGestureRecognizer *)recognizer
-{
-    
+{   
     CALayer *textLayer = (CALayer *)[[_imageLayer sublayers] objectAtIndex:0];
     
     CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"position.y"];

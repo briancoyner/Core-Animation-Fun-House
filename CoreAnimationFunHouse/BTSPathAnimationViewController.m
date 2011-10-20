@@ -9,11 +9,18 @@
 #import "BTSPathAnimationViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-//
-// This example shows just how easy it is to animate a layer along an arbitrary path.
-@implementation BTSPathAnimationViewController {
+@interface BTSPathAnimationViewController() {
     CGMutablePathRef _path;
 }
+
+- (void)addPathAnimationToLayer:(CALayer *)layer shouldRepeat:(BOOL)shouldRepeat;
+@end
+
+//
+// This example shows just how easy it is to animate a layer along an arbitrary path.
+@implementation BTSPathAnimationViewController 
+
+static const CGPoint kBTSPathEndPoint = {300, 300};
 
 - (void)dealloc
 {
@@ -33,12 +40,12 @@
         CGPathAddLineToPoint(_path, NULL, 100, 100);
         CGPathAddArc(_path, NULL, 100, 100, 75, 0.0, M_PI, 1);
         CGPathAddLineToPoint(_path, NULL, 200, 150);
-        CGPathAddCurveToPoint(_path, NULL, 150, 150, 50, 350, 300, 300);
+        CGPathAddCurveToPoint(_path, NULL, 150, 150, 50, 350, kBTSPathEndPoint.x, kBTSPathEndPoint.y);
     }
     
     // This is the layer that animates along the path. 
     CALayer *layer = [CALayer layer];
-
+    
     [layer setShadowColor:[UIColor blackColor].CGColor];
     [layer setContents:(id)[UIImage imageNamed:@"american-flag.png"].CGImage];
     [layer setBounds:CGRectMake(0, 0, 75, 75)];
@@ -48,19 +55,8 @@
     [layer setShadowOffset:CGSizeMake(5.0, 5.0)];
     
     [[[self view] layer] addSublayer:layer];
-
-    // To animate along a path is drop-dead easy. 
-    // - Create a "key frame animation" for the "position"
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-    [animation setPath:_path]; // here is the magic!
-    [animation setDuration:5.0];
-    [animation setAutoreverses:YES];
-    [animation setCalculationMode:kCAAnimationCubic];
-    [animation setRotationMode:kCAAnimationRotateAuto]; // pass nil to turn off rotation model
-    [animation setRepeatCount:MAXFLOAT];
     
-    // start animating the layer along the path.
-    [layer addAnimation:animation forKey:nil];
+    [self addPathAnimationToLayer:layer shouldRepeat:YES];
     
     // Set the view layer's delegate to the view controller. The delegate simply draws the path.
     [[[self view] layer] setContentsScale:[[UIScreen mainScreen] scale]];
@@ -70,8 +66,6 @@
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    
     if  (_path) {
         CFRelease(_path);
         _path = nil;
@@ -79,7 +73,11 @@
     
     // Yes... I like the brackets.. I am not a fan of the "dot" syntax. :-)
     [[[[[self view] layer] sublayers] objectAtIndex:0] setDelegate:nil];
+    
+    [super viewDidUnload];
 }
+
+#pragma mark - Path Drawing
 
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
 {  
@@ -96,4 +94,47 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)updateAnimation:(id)sender {
+    BOOL shouldRepeat = [(UISwitch *)sender isOn];
+
+    CALayer *layer = [[[[self view] layer] sublayers] objectAtIndex:0];
+    [self addPathAnimationToLayer:layer shouldRepeat:shouldRepeat];
+}
+
+- (void)addPathAnimationToLayer:(CALayer *)layer shouldRepeat:(BOOL)shouldRepeat
+{
+    [layer removeAllAnimations];
+    
+    // To animate along a path is drop-dead easy. 
+    // - Create a "key frame animation" for the "position"
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    [animation setPath:_path]; // here is the magic!
+    [animation setDuration:2.5];
+
+    [animation setCalculationMode:kCAAnimationCubic];
+    [animation setRotationMode:kCAAnimationRotateAuto]; // pass nil to turn off rotation model
+
+    if (shouldRepeat) {
+        [animation setAutoreverses:YES];
+        [animation setRepeatCount:MAXFLOAT];
+    } else {
+        [animation setAutoreverses:NO];
+        [animation setRepeatCount:1];
+    
+        // NOTE: 
+        // Move the layer to end of the path. This will implicitly animate. However, 
+        // the implicit animation is replaced when adding the key frame animation to the 
+        // layer (see the "addAnimation:forKey:" method below. 
+        //[layer setPosition:kBTSPathEndPoint];
+    }
+    
+    // Start animating the layer along the path.
+    //
+    // Important Note:
+    // Every layer maintains a map of animations keyed by various property values. 
+    // In this case, the key frame animation replaces the "implicit property" animation.
+    // This is important in order to override any existing implicit animation caused 
+    // by setting the layer's position. 
+    [layer addAnimation:animation forKey:@"position"];
+}
 @end

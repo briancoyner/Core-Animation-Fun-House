@@ -172,7 +172,7 @@
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="gvD-xd-6D1" kind="push" identifier="BTSPathAnimationViewController" id="DBl-Jr-FTi"/>
+                                            <segue destination="Xiw-CP-Tva" kind="push" identifier="BTSPathAnimationViewController" id="uwL-z0-0VX"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Phg-2N-IcG" detailTextLabel="6v4-Gv-G8W" style="IBUITableViewCellStyleSubtitle" id="88S-pT-G2C">
@@ -204,6 +204,35 @@
                                             <segue destination="sbl-kI-GLG" kind="push" id="xkO-WR-AAR"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="O1D-qP-ymw" detailTextLabel="14x-be-D4r" style="IBUITableViewCellStyleSubtitle" id="WSA-td-CfF">
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Sin Wave" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O1D-qP-ymw">
+                                                    <rect key="frame" x="10" y="2" width="81" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Animate a sin wave" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14x-be-D4r">
+                                                    <rect key="frame" x="10" y="24" width="122" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="BTl-rM-4wN" kind="push" identifier="BTSSinWaveViewController" id="X1a-5T-4CZ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -215,7 +244,7 @@
                     <navigationItem key="navigationItem" title="Fun House" id="4tc-3g-09d"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-331" y="27"/>
+            <point key="canvasLocation" x="-367" y="23"/>
         </scene>
         <scene sceneID="Tl0-JF-BZP">
             <objects>
@@ -224,26 +253,21 @@
                     <view key="view" contentMode="scaleToFill" id="Uch-9X-ffG">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to animate text" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="6cj-Cg-DQ0">
+                                <rect key="frame" x="20" y="375" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reflections" id="zsG-SJ-D5P"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="652" y="-749"/>
-        </scene>
-        <scene sceneID="FTp-cS-dge">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z5k-JT-HCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="gvD-xd-6D1" customClass="BTSPathAnimationViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GBi-EB-hpB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Path Animation" id="rG3-3d-T11"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="652" y="491"/>
         </scene>
         <scene sceneID="TXl-CY-YrA">
             <objects>
@@ -267,6 +291,75 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="653" y="1182"/>
+        </scene>
+        <scene sceneID="JPk-OT-mfW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9RC-JB-zJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="BTl-rM-4wN" customClass="BTSSineWaveViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hl7-os-jWb">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view tag="100" contentMode="scaleToFill" id="hHg-Fg-BRc" customClass="BTSSineWaveView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83529418710000003" green="0.89411771299999998" blue="0.90980398650000005" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="1" maxValue="100" continuous="NO" id="wbm-1m-1cp">
+                                <rect key="frame" x="114" y="290" width="188" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="updateAmplitude:" destination="BTl-rM-4wN" eventType="valueChanged" id="N0x-2n-gfW"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.031414999999999998" minValue="0.0" maxValue="0.062829999999999997" continuous="NO" id="amt-rz-GCT">
+                                <rect key="frame" x="114" y="333" width="188" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="updateFrequency:" destination="BTl-rM-4wN" eventType="valueChanged" id="hL9-tN-24h"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" continuous="NO" id="oJK-ab-eug">
+                                <rect key="frame" x="114" y="374" width="188" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <action selector="updatePhase:" destination="BTl-rM-4wN" eventType="valueChanged" id="NuD-qa-pwS"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Amplitude" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="D1Z-5w-OI7">
+                                <rect key="frame" x="30" y="290" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Frequency" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="aZa-Zl-fEl">
+                                <rect key="frame" x="27" y="333" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phase" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="MsY-06-cJb">
+                                <rect key="frame" x="59" y="374" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sine Wave" id="4Ac-6Z-wp6"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="_amplitudeSlider" destination="wbm-1m-1cp" id="Dk3-tu-zcz"/>
+                        <outlet property="_frequencySlider" destination="amt-rz-GCT" id="e6j-wo-ET9"/>
+                        <outlet property="_phaseSlider" destination="oJK-ab-eug" id="EYY-Bz-pg0"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="652" y="1768"/>
         </scene>
         <scene sceneID="1QT-A0-PMN">
             <objects>
@@ -501,42 +594,31 @@
             </objects>
             <point key="canvasLocation" x="660" y="-1986"/>
         </scene>
+        <scene sceneID="Gyr-S4-CqK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g7S-PP-kk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Xiw-CP-Tva" customClass="BTSPathAnimationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JZO-JN-LIH">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Path Animation" id="t3j-ON-4RZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="sPH-jY-GDC">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="hMA-ex-3hb">
+                                <rect key="frame" x="236" y="8" width="79" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="updateAnimation:" destination="Xiw-CP-Tva" eventType="valueChanged" id="g9r-Dg-5pe"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="660" y="513"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="BTSBasicLayerPropertiesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSBasicLayerPropertiesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="animationDurationChanged:"/>
-                <relationship kind="outlet" name="_animationDurationSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="_enableAnimations" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="animationDurationLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BTSBezierPathViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSBezierPathViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="animateButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="BTSCubicBezierPathView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSCubicBezierPathView.h"/>
-        </class>
-        <class className="BTSPathAnimationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSPathAnimationViewController.h"/>
-        </class>
-        <class className="BTSPulseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSPulseViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="animationDurationLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BTSReflectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSReflectionViewController.h"/>
-        </class>
-        <class className="BTSWiggleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSWiggleViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
