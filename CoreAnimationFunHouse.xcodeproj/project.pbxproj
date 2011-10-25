@@ -126,37 +126,15 @@
 		5D6FBC6B142BB9A80015A945 /* CoreAnimationFunHouse */ = {
 			isa = PBXGroup;
 			children = (
-				5D6FBC77142BB9A80015A945 /* MainStoryboard.storyboard */,
-				5D6FBC74142BB9A80015A945 /* BTSAppDelegate.h */,
-				5D6FBC75142BB9A80015A945 /* BTSAppDelegate.m */,
-				5D6FBC82142BBA430015A945 /* BTSBasicLayerPropertiesViewController.h */,
-				5D6FBC83142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m */,
-				5D00603F1435FB2700615004 /* BTSPulseViewController.h */,
-				5D0060401435FB2700615004 /* BTSPulseViewController.m */,
-				5D31F6EB143BEA0E008ECE3D /* BTSReflectionViewController.h */,
-				5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */,
-				5D31F701143D1FD7008ECE3D /* BTSWiggleViewController.h */,
-				5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */,
-				5D422D651440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.h */,
-				5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */,
-				5D422D681440ECA800F85498 /* BTSPathAnimationViewController.h */,
-				5D422D691440ECA800F85498 /* BTSPathAnimationViewController.m */,
-				5D69A4801442256E00B98A2D /* BTSBezierPathViewController.h */,
-				5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */,
-				5D69A4841442735400B98A2D /* BTSCubicBezierPathView.h */,
-				5D69A4851442735400B98A2D /* BTSCubicBezierPathView.m */,
-				5D9396521447C7270049EBBC /* BTSAnchorPointLayer.h */,
-				5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */,
-				5DD391E6144A0AA600545708 /* BTSSineWaveViewController.h */,
-				5DD391E7144A0AA600545708 /* BTSSineWaveViewController.m */,
-				5DD391ED144A0B2200545708 /* BTSSineWaveView.h */,
-				5D284BA2144BB7A20000650E /* BTSSineWaveView.m */,
-				5D284B9F144BB5310000650E /* BTSSineWaveLayer.h */,
-				5D284BA0144BB57E0000650E /* BTSSineWaveLayer.m */,
-				5D284BB1144BD0BA0000650E /* BTSCoreGraphics.h */,
-				5D284BB2144BD0BA0000650E /* BTSCoreGraphics.m */,
-				5D309B431453969A00AD7EAB /* BTSMediaTimingViewController.h */,
-				5D309B441453969A00AD7EAB /* BTSMediaTimingViewController.m */,
+				5DCD831C145662A700A41FE1 /* App  */,
+				5DCD83151456623100A41FE1 /* Basic */,
+				5DCD83161456623D00A41FE1 /* Pulse */,
+				5DCD83171456624A00A41FE1 /* Reflection */,
+				5DCD83181456625600A41FE1 /* Wiggle and Jiggle */,
+				5DCD83191456626400A41FE1 /* Simple Path Animation */,
+				5DCD831A1456627900A41FE1 /* Bezier Path */,
+				5DCD831B1456628A00A41FE1 /* Sine Wave */,
+				5DCD831D145662BA00A41FE1 /* Utilities */,
 			);
 			path = CoreAnimationFunHouse;
 			sourceTree = "<group>";
@@ -172,6 +150,100 @@
 			);
 			name = "Supporting Files";
 			path = CoreAnimationFunHouse;
+			sourceTree = "<group>";
+		};
+		5DCD83151456623100A41FE1 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				5D6FBC82142BBA430015A945 /* BTSBasicLayerPropertiesViewController.h */,
+				5D6FBC83142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		5DCD83161456623D00A41FE1 /* Pulse */ = {
+			isa = PBXGroup;
+			children = (
+				5D00603F1435FB2700615004 /* BTSPulseViewController.h */,
+				5D0060401435FB2700615004 /* BTSPulseViewController.m */,
+			);
+			name = Pulse;
+			sourceTree = "<group>";
+		};
+		5DCD83171456624A00A41FE1 /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				5D31F6EB143BEA0E008ECE3D /* BTSReflectionViewController.h */,
+				5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */,
+			);
+			name = Reflection;
+			sourceTree = "<group>";
+		};
+		5DCD83181456625600A41FE1 /* Wiggle and Jiggle */ = {
+			isa = PBXGroup;
+			children = (
+				5D31F701143D1FD7008ECE3D /* BTSWiggleViewController.h */,
+				5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */,
+				5D422D651440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.h */,
+				5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */,
+			);
+			name = "Wiggle and Jiggle";
+			sourceTree = "<group>";
+		};
+		5DCD83191456626400A41FE1 /* Simple Path Animation */ = {
+			isa = PBXGroup;
+			children = (
+				5D422D681440ECA800F85498 /* BTSPathAnimationViewController.h */,
+				5D422D691440ECA800F85498 /* BTSPathAnimationViewController.m */,
+			);
+			name = "Simple Path Animation";
+			sourceTree = "<group>";
+		};
+		5DCD831A1456627900A41FE1 /* Bezier Path */ = {
+			isa = PBXGroup;
+			children = (
+				5D69A4801442256E00B98A2D /* BTSBezierPathViewController.h */,
+				5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */,
+				5D69A4841442735400B98A2D /* BTSCubicBezierPathView.h */,
+				5D69A4851442735400B98A2D /* BTSCubicBezierPathView.m */,
+				5D309B431453969A00AD7EAB /* BTSMediaTimingViewController.h */,
+				5D309B441453969A00AD7EAB /* BTSMediaTimingViewController.m */,
+			);
+			name = "Bezier Path";
+			sourceTree = "<group>";
+		};
+		5DCD831B1456628A00A41FE1 /* Sine Wave */ = {
+			isa = PBXGroup;
+			children = (
+				5DD391E6144A0AA600545708 /* BTSSineWaveViewController.h */,
+				5DD391E7144A0AA600545708 /* BTSSineWaveViewController.m */,
+				5DD391ED144A0B2200545708 /* BTSSineWaveView.h */,
+				5D284BA2144BB7A20000650E /* BTSSineWaveView.m */,
+				5D284B9F144BB5310000650E /* BTSSineWaveLayer.h */,
+				5D284BA0144BB57E0000650E /* BTSSineWaveLayer.m */,
+			);
+			name = "Sine Wave";
+			sourceTree = "<group>";
+		};
+		5DCD831C145662A700A41FE1 /* App  */ = {
+			isa = PBXGroup;
+			children = (
+				5D6FBC77142BB9A80015A945 /* MainStoryboard.storyboard */,
+				5D6FBC74142BB9A80015A945 /* BTSAppDelegate.h */,
+				5D6FBC75142BB9A80015A945 /* BTSAppDelegate.m */,
+			);
+			name = "App ";
+			sourceTree = "<group>";
+		};
+		5DCD831D145662BA00A41FE1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5D9396521447C7270049EBBC /* BTSAnchorPointLayer.h */,
+				5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */,
+				5D284BB1144BD0BA0000650E /* BTSCoreGraphics.h */,
+				5D284BB2144BD0BA0000650E /* BTSCoreGraphics.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
