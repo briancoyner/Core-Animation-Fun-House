@@ -17,7 +17,6 @@
     __weak IBOutlet UIView *_animationContainer;
     
     CALayer *_animationLayer;
-    
     CALayer *_testLayer;
 }
 
@@ -102,12 +101,4 @@
 - (IBAction)makeEaseInEaseOut:(id)sender {
     [_bezierPathView transitionToMediaTimingFunctionWithName:kCAMediaTimingFunctionEaseInEaseOut];        
 }
-
-
-
-
-
-
-
-
 @end
