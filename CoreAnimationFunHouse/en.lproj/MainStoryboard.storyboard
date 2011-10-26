@@ -247,8 +247,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Custom Bézier Curve Timing Animation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qFQ-e6-0Zg">
-                                                    <rect key="frame" x="10" y="24" width="246" height="18"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Animate with CAMediaTimingFunctions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qFQ-e6-0Zg">
+                                                    <rect key="frame" x="10" y="24" width="245" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,7 +270,7 @@
                             <outlet property="delegate" destination="Glg-dN-0Hz" id="1Eb-WP-PZr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Fun House" id="4tc-3g-09d"/>
+                    <navigationItem key="navigationItem" title="Core Animation" id="4tc-3g-09d"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="-367" y="23"/>

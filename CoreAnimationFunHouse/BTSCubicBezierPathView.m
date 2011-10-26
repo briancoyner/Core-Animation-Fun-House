@@ -107,6 +107,7 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
         [_shapeLayer setPath:path];
         CFRelease(path);
     } else {
+        
         _hitTestLayers = [NSArray arrayWithObjects:_beginPointControlPointLayer, _endPointControlPointLayer, _beginPointLayer, _endPointLayer, nil];
         [[self layer] setGeometryFlipped:NO];
     }
@@ -162,14 +163,29 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
     
     [function getControlPointAtIndex:2 values:values];
     [_endPointControlPointLayer setPosition:CGPointMake(values[0] * xDistance, values[1] * yDistance)];
-
-    // A dummy animation that allows us to attach a run loop timer to animate the bezier path as the control points animate 
-    // to their new locations.
-    CABasicAnimation *dummy = [CABasicAnimation animation];
-    [dummy setFromValue:[NSNumber numberWithInt:1]];
-    [dummy setToValue:[NSNumber numberWithInt:2]];
-    [dummy setDelegate:self];
-    [[self layer] addAnimation:dummy forKey:nil];
+    
+    {
+        // A dummy animation that allows us to attach a run loop timer to animate the bezier path as the control points animate 
+        // to their new locations.
+        CABasicAnimation *dummy = [CABasicAnimation animation];
+        [dummy setFromValue:[NSNumber numberWithInt:1]];
+        [dummy setToValue:[NSNumber numberWithInt:2]];
+        [dummy setDelegate:self];
+        [[self layer] addAnimation:dummy forKey:nil];
+    }
+    
+    {
+        // NOTE: Core Animation actually knows how to animate between two paths. Unfortunately, the animation
+        //       is not as smooth as I would like it to be. Comment out the above 'dummy' animation block 
+        //       and uncomment this block to see the difference.
+        //    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
+        //    CGPathRef path = BTSPathCreateForCurrentControlPointPositions(_beginPointLayer, _endPointLayer, _beginPointControlPointLayer, _endPointControlPointLayer);    
+        //    [pathAnimation setFromValue:(id)[_shapeLayer path]];
+        //    [pathAnimation setToValue:(__bridge id)path];
+        //    [_shapeLayer setPath:path];
+        //    [_shapeLayer addAnimation:pathAnimation forKey:@"path"];
+        //    CFRelease(path);    
+    }
 }
 
 #pragma mark - Bezier Path
