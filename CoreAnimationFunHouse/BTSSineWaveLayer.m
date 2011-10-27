@@ -40,6 +40,7 @@ static NSString *kBTSSineWaveLayerPhase = @"phase";
     self = [super init];
     if (self) {
         _currentAnimations = [[NSMutableArray alloc] initWithCapacity:3];
+        [self setContentsScale:[[UIScreen mainScreen] scale]];
     }
     return self;
 }
@@ -51,15 +52,13 @@ static NSString *kBTSSineWaveLayerPhase = @"phase";
     CGRect bounds = [self bounds];
     
     CGContextTranslateCTM(context, 0.0, CGRectGetHeight(bounds) / 2.0);    
-
+    
     BTSDrawCoordinateAxes(context);
     
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetLineWidth(context, 2.0);
-    CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineJoin(context, kCGLineJoinRound);
     CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
-  
+    
     // The layer redraws the content using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
     CGFloat amplitude = [[(NSValue *)[self presentationLayer] valueForKey:kBTSSineWaveLayerAmplitude] floatValue];
