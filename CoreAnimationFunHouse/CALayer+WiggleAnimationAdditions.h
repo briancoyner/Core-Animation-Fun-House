@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface CALayer (CALayer_WiggleAnimationAdditions)
+@interface CALayer (WiggleAnimationAdditions)
 
 
 - (void)bts_startWiggling;

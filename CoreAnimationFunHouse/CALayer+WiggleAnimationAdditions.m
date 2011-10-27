@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Brian Coyner. All rights reserved.
 //
 
-#import "CALayer+CALayer_WiggleAnimationAdditions.h"
+#import "CALayer+WiggleAnimationAdditions.h"
 
-@implementation CALayer (CALayer_WiggleAnimationAdditions)
+@implementation CALayer (WiggleAnimationAdditions)
 
 static NSString *kBTSWiggleTransformAnimation = @"BTSWiggleTransformAnimation";
 static NSString *kBTSWiggleTransformTranslationXAnimation = @"BTSWiggleTransformTranslationXAnimation";

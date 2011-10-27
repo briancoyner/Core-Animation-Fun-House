@@ -14,8 +14,11 @@
 		5D309B451453969A00AD7EAB /* BTSMediaTimingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D309B441453969A00AD7EAB /* BTSMediaTimingViewController.m */; };
 		5D31F6ED143BEA0E008ECE3D /* BTSReflectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */; };
 		5D31F703143D1FD7008ECE3D /* BTSWiggleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */; };
-		5D422D671440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */; };
+		5D422D671440D61600F85498 /* CALayer+WiggleAnimationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D422D661440D61600F85498 /* CALayer+WiggleAnimationAdditions.m */; };
 		5D422D6A1440ECA800F85498 /* BTSPathAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D422D691440ECA800F85498 /* BTSPathAnimationViewController.m */; };
+		5D583FD21458ED4B0036131C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D583FD11458ED4B0036131C /* Icon.png */; };
+		5D583FD51458ED6D0036131C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D583FD41458ED6D0036131C /* Icon@2x.png */; };
+		5D583FDB1458F0970036131C /* american-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D583FDA1458F0970036131C /* american-flag.png */; };
 		5D69A4821442256E00B98A2D /* BTSBezierPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */; };
 		5D69A4861442735400B98A2D /* BTSCubicBezierPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69A4851442735400B98A2D /* BTSCubicBezierPathView.m */; };
 		5D6FBC66142BB9A80015A945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6FBC65142BB9A80015A945 /* UIKit.framework */; };
@@ -30,7 +33,6 @@
 		5D9396541447C7270049EBBC /* BTSAnchorPointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */; };
 		5DD391F6144A16FD00545708 /* BTSSineWaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD391E7144A0AA600545708 /* BTSSineWaveViewController.m */; };
 		5DFB0B4B1448A74D001DF61F /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB0B4A1448A74D001DF61F /* readme.md */; };
-		5DFB0B4E1448A915001DF61F /* american-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB0B4C1448A915001DF61F /* american-flag.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +49,13 @@
 		5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSReflectionViewController.m; sourceTree = "<group>"; };
 		5D31F701143D1FD7008ECE3D /* BTSWiggleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSWiggleViewController.h; sourceTree = "<group>"; };
 		5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSWiggleViewController.m; sourceTree = "<group>"; };
-		5D422D651440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CALayer_WiggleAnimationAdditions.h"; sourceTree = "<group>"; };
-		5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CALayer_WiggleAnimationAdditions.m"; sourceTree = "<group>"; };
+		5D422D651440D61600F85498 /* CALayer+WiggleAnimationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+WiggleAnimationAdditions.h"; sourceTree = "<group>"; };
+		5D422D661440D61600F85498 /* CALayer+WiggleAnimationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+WiggleAnimationAdditions.m"; sourceTree = "<group>"; };
 		5D422D681440ECA800F85498 /* BTSPathAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSPathAnimationViewController.h; sourceTree = "<group>"; };
 		5D422D691440ECA800F85498 /* BTSPathAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSPathAnimationViewController.m; sourceTree = "<group>"; };
+		5D583FD11458ED4B0036131C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		5D583FD41458ED6D0036131C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		5D583FDA1458F0970036131C /* american-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "american-flag.png"; sourceTree = "<group>"; };
 		5D69A4801442256E00B98A2D /* BTSBezierPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSBezierPathViewController.h; sourceTree = "<group>"; };
 		5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSBezierPathViewController.m; sourceTree = "<group>"; };
 		5D69A4841442735400B98A2D /* BTSCubicBezierPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSCubicBezierPathView.h; sourceTree = "<group>"; };
@@ -75,7 +80,6 @@
 		5DD391E7144A0AA600545708 /* BTSSineWaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSSineWaveViewController.m; sourceTree = "<group>"; };
 		5DD391ED144A0B2200545708 /* BTSSineWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSSineWaveView.h; sourceTree = "<group>"; };
 		5DFB0B4A1448A74D001DF61F /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
-		5DFB0B4D1448A915001DF61F /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/american-flag.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +146,9 @@
 		5D6FBC6C142BB9A80015A945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DFB0B4C1448A915001DF61F /* american-flag.png */,
+				5D583FDA1458F0970036131C /* american-flag.png */,
+				5D583FD41458ED6D0036131C /* Icon@2x.png */,
+				5D583FD11458ED4B0036131C /* Icon.png */,
 				5D6FBC6D142BB9A80015A945 /* CoreAnimationFunHouse-Info.plist */,
 				5D6FBC6E142BB9A80015A945 /* InfoPlist.strings */,
 				5D6FBC71142BB9A80015A945 /* main.m */,
@@ -184,8 +190,8 @@
 			children = (
 				5D31F701143D1FD7008ECE3D /* BTSWiggleViewController.h */,
 				5D31F702143D1FD7008ECE3D /* BTSWiggleViewController.m */,
-				5D422D651440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.h */,
-				5D422D661440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m */,
+				5D422D651440D61600F85498 /* CALayer+WiggleAnimationAdditions.h */,
+				5D422D661440D61600F85498 /* CALayer+WiggleAnimationAdditions.m */,
 			);
 			name = "Wiggle and Jiggle";
 			sourceTree = "<group>";
@@ -300,7 +306,9 @@
 				5D6FBC70142BB9A80015A945 /* InfoPlist.strings in Resources */,
 				5D6FBC79142BB9A80015A945 /* MainStoryboard.storyboard in Resources */,
 				5DFB0B4B1448A74D001DF61F /* readme.md in Resources */,
-				5DFB0B4E1448A915001DF61F /* american-flag.png in Resources */,
+				5D583FD21458ED4B0036131C /* Icon.png in Resources */,
+				5D583FD51458ED6D0036131C /* Icon@2x.png in Resources */,
+				5D583FDB1458F0970036131C /* american-flag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +325,7 @@
 				5D0060411435FB2700615004 /* BTSPulseViewController.m in Sources */,
 				5D31F6ED143BEA0E008ECE3D /* BTSReflectionViewController.m in Sources */,
 				5D31F703143D1FD7008ECE3D /* BTSWiggleViewController.m in Sources */,
-				5D422D671440D61600F85498 /* CALayer+CALayer_WiggleAnimationAdditions.m in Sources */,
+				5D422D671440D61600F85498 /* CALayer+WiggleAnimationAdditions.m in Sources */,
 				5D422D6A1440ECA800F85498 /* BTSPathAnimationViewController.m in Sources */,
 				5D69A4821442256E00B98A2D /* BTSBezierPathViewController.m in Sources */,
 				5D69A4861442735400B98A2D /* BTSCubicBezierPathView.m in Sources */,
@@ -347,14 +355,6 @@
 				5D6FBC78142BB9A80015A945 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		5DFB0B4C1448A915001DF61F /* american-flag.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DFB0B4D1448A915001DF61F /* en */,
-			);
-			name = "american-flag.png";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

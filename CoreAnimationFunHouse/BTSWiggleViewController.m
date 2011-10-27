@@ -7,7 +7,7 @@
 //
 
 #import "BTSWiggleViewController.h"
-#import "CALayer+CALayer_WiggleAnimationAdditions.h"
+#import "CALayer+WiggleAnimationAdditions.h"
 
 #import <QuartzCore/QuartzCore.h>
 
