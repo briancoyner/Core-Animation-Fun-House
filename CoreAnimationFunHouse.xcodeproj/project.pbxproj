@@ -19,6 +19,9 @@
 		5D583FD21458ED4B0036131C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D583FD11458ED4B0036131C /* Icon.png */; };
 		5D583FD51458ED6D0036131C /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D583FD41458ED6D0036131C /* Icon@2x.png */; };
 		5D583FDB1458F0970036131C /* american-flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D583FDA1458F0970036131C /* american-flag.png */; };
+		5D5ED24E145B845300559B40 /* BTSLissajousViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5ED24D145B845300559B40 /* BTSLissajousViewController.m */; };
+		5D5ED253145B886A00559B40 /* BTSLissajousView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5ED252145B886A00559B40 /* BTSLissajousView.m */; };
+		5D5ED256145B889F00559B40 /* BTSLissajousLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5ED255145B889F00559B40 /* BTSLissajousLayer.m */; };
 		5D69A4821442256E00B98A2D /* BTSBezierPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */; };
 		5D69A4861442735400B98A2D /* BTSCubicBezierPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D69A4851442735400B98A2D /* BTSCubicBezierPathView.m */; };
 		5D6FBC66142BB9A80015A945 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6FBC65142BB9A80015A945 /* UIKit.framework */; };
@@ -56,6 +59,12 @@
 		5D583FD11458ED4B0036131C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		5D583FD41458ED6D0036131C /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		5D583FDA1458F0970036131C /* american-flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "american-flag.png"; sourceTree = "<group>"; };
+		5D5ED24C145B845300559B40 /* BTSLissajousViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSLissajousViewController.h; sourceTree = "<group>"; };
+		5D5ED24D145B845300559B40 /* BTSLissajousViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSLissajousViewController.m; sourceTree = "<group>"; };
+		5D5ED251145B886A00559B40 /* BTSLissajousView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSLissajousView.h; sourceTree = "<group>"; };
+		5D5ED252145B886A00559B40 /* BTSLissajousView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSLissajousView.m; sourceTree = "<group>"; };
+		5D5ED254145B889F00559B40 /* BTSLissajousLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSLissajousLayer.h; sourceTree = "<group>"; };
+		5D5ED255145B889F00559B40 /* BTSLissajousLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSLissajousLayer.m; sourceTree = "<group>"; };
 		5D69A4801442256E00B98A2D /* BTSBezierPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSBezierPathViewController.h; sourceTree = "<group>"; };
 		5D69A4811442256E00B98A2D /* BTSBezierPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSBezierPathViewController.m; sourceTree = "<group>"; };
 		5D69A4841442735400B98A2D /* BTSCubicBezierPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSCubicBezierPathView.h; sourceTree = "<group>"; };
@@ -97,6 +106,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D5ED250145B845B00559B40 /* Lissajous */ = {
+			isa = PBXGroup;
+			children = (
+				5D5ED24C145B845300559B40 /* BTSLissajousViewController.h */,
+				5D5ED24D145B845300559B40 /* BTSLissajousViewController.m */,
+				5D5ED251145B886A00559B40 /* BTSLissajousView.h */,
+				5D5ED252145B886A00559B40 /* BTSLissajousView.m */,
+				5D5ED254145B889F00559B40 /* BTSLissajousLayer.h */,
+				5D5ED255145B889F00559B40 /* BTSLissajousLayer.m */,
+			);
+			name = Lissajous;
+			sourceTree = "<group>";
+		};
 		5D6FBC56142BB9A80015A945 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +160,7 @@
 				5DCD83191456626400A41FE1 /* Simple Path Animation */,
 				5DCD831A1456627900A41FE1 /* Bezier Path */,
 				5DCD831B1456628A00A41FE1 /* Sine Wave */,
+				5D5ED250145B845B00559B40 /* Lissajous */,
 				5DCD831D145662BA00A41FE1 /* Utilities */,
 			);
 			path = CoreAnimationFunHouse;
@@ -335,6 +358,9 @@
 				5D284BA3144BB7A20000650E /* BTSSineWaveView.m in Sources */,
 				5D284BB3144BD0BA0000650E /* BTSCoreGraphics.m in Sources */,
 				5D309B451453969A00AD7EAB /* BTSMediaTimingViewController.m in Sources */,
+				5D5ED24E145B845300559B40 /* BTSLissajousViewController.m in Sources */,
+				5D5ED253145B886A00559B40 /* BTSLissajousView.m in Sources */,
+				5D5ED256145B889F00559B40 /* BTSLissajousLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

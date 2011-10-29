@@ -4,6 +4,12 @@
 
 #import "BTSCoreGraphics.h"
 
+static void BTSPrintCurrentCTM(CGContextRef context) 
+{
+    CGAffineTransform t = CGContextGetCTM(context);
+    fprintf(stderr, "Current CTM: a=%f, b=%f, c=%f, d=%f, tx=%f, ty=%f\n", t.a, t.b, t.c, t.d, t.tx, t.ty);
+}
+
 static void BTSDrawPoint(CGContextRef context, CGPoint point)
 {
     CGContextSaveGState(context);
