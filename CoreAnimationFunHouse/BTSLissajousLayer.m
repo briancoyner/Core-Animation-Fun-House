@@ -64,14 +64,13 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
     CGContextSetLineWidth(context, 2.0);
     CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
     
-    // The layer redraws the content using the current animation's interpolated values. The interpolated
+    // The layer redraws the curve using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
     CGFloat amplitude = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerAmplitude] floatValue];
-    
     CGFloat a = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerA] floatValue];
     CGFloat b = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerB] floatValue];
-
     CGFloat delta = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerDelta] floatValue];
+
     CGMutablePathRef path = CGPathCreateMutable();
 
     CGFloat increment = 2 * M_PI / (a * b * 40);

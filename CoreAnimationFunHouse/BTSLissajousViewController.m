@@ -36,7 +36,7 @@
     BTSLissajousLayer *layer = (BTSLissajousLayer *)[[[self view] viewWithTag:100] layer];
     
     [_amplitudeSlider setMinimumValue:0.0];
-    [_amplitudeSlider setMaximumValue:[layer bounds].size.height / 2.0 - 5.0];
+    [_amplitudeSlider setMaximumValue:[layer bounds].size.height / 2.0];
     [_amplitudeSlider setValue:[_amplitudeSlider maximumValue] / 2.0];
     
     [_aStepper setMinimumValue:0.0];
@@ -90,7 +90,6 @@
     BTSLissajousLayer *layer = (BTSLissajousLayer *)[[[self view] viewWithTag:100] layer]; 
     float value = [(UIStepper *)sender value];
     [_aValueLabel setText:[NSString stringWithFormat:@"%0.0f", [_aStepper value]]];
-
 
     [layer setA:(CGFloat)value];
 }
