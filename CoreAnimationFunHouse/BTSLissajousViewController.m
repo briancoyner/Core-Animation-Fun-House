@@ -35,11 +35,11 @@
     
     BTSLissajousLayer *layer = (BTSLissajousLayer *)[[[self view] viewWithTag:100] layer];
     
-    [_amplitudeSlider setMinimumValue:0.0];
+    [_amplitudeSlider setMinimumValue:1.0];
     [_amplitudeSlider setMaximumValue:[layer bounds].size.height / 2.0];
     [_amplitudeSlider setValue:[_amplitudeSlider maximumValue] / 2.0];
     
-    [_aStepper setMinimumValue:0.0];
+    [_aStepper setMinimumValue:1.0];
     [_aStepper setMaximumValue:10.0];
     [_aStepper setValue:1.0];
 

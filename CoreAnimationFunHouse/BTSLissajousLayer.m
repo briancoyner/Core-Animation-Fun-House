@@ -75,7 +75,6 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
 
     CGFloat increment = 2 * M_PI / (a * b * 40);
     for (CGFloat t = 0.0; t < 2 * M_PI + increment; t = t + increment) {
-        
         CGFloat x = amplitude * sin(a * t + delta);
         CGFloat y = amplitude * sin(b * t);
         if (t == 0.0) {
@@ -86,6 +85,7 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
     }
     
     CGContextAddPath(context, path);
+    CGContextSetLineJoin(context, kCGLineJoinBevel);
     CGContextStrokePath(context);
     CFRelease(path);
 }
