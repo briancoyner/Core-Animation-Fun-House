@@ -40,7 +40,7 @@
     [_amplitudeSlider setValue:[_amplitudeSlider maximumValue] / 2.0];
     
     [_frequencySlider setMinimumValue:0.0];
-    [_frequencySlider setMaximumValue:(M_PI / [layer bounds].size.width)];
+    [_frequencySlider setMaximumValue:(2*M_PI / [layer bounds].size.width) * 10.0];
     [_frequencySlider setValue:[_frequencySlider maximumValue]/ 2.0];
     
     [_phaseSlider setMinimumValue:-M_PI];

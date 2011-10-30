@@ -57,7 +57,7 @@ static NSString *kBTSSineWaveLayerPhase = @"phase";
     
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetLineWidth(context, 2.0);
-    CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
+    //CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
     
     // The layer redraws the content using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".

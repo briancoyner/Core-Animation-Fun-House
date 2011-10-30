@@ -409,75 +409,82 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view tag="100" contentMode="scaleToFill" id="wv9-35-7Kv" customClass="BTSLissajousView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                                <rect key="frame" x="0.0" y="40" width="320" height="256"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="GDp-Zc-eLp">
-                                <rect key="frame" x="107" y="284" width="195" height="23"/>
+                                <rect key="frame" x="104" y="10" width="195" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="updateAmplitude:" destination="BKg-mr-nIN" eventType="valueChanged" id="bfU-WZ-z8j"/>
                                 </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="bTO-YG-rBF">
-                                <rect key="frame" x="107" y="314" width="195" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="updateFrequency:" destination="BKg-mr-nIN" eventType="valueChanged" id="h2A-9Q-SrH"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Amplitude" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="AsT-DM-bv0">
-                                <rect key="frame" x="23" y="284" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Frequency" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="fwf-v1-K2C">
-                                <rect key="frame" x="20" y="314" width="81" height="21"/>
+                                <rect key="frame" x="20" y="10" width="78" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="A" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="EhY-c9-olY">
-                                <rect key="frame" x="52" y="344" width="49" height="21"/>
+                                <rect key="frame" x="20" y="307" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="B" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="hgA-PR-Jtd">
-                                <rect key="frame" x="52" y="379" width="49" height="21"/>
+                                <rect key="frame" x="20" y="342" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Delta" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="ONt-ON-Qhg">
+                                <rect key="frame" x="20" y="374" width="49" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="sYC-TX-D2U">
-                                <rect key="frame" x="109" y="341" width="94" height="27"/>
+                                <rect key="frame" x="77" y="304" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="updateA:" destination="BKg-mr-nIN" eventType="valueChanged" id="vHM-pl-uql"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="Rs9-Or-L8G">
-                                <rect key="frame" x="109" y="376" width="94" height="27"/>
+                                <rect key="frame" x="77" y="339" width="94" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="updateB:" destination="BKg-mr-nIN" eventType="valueChanged" id="4Li-Od-47R"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" minimumFontSize="10" id="Mbg-MZ-c3m">
-                                <rect key="frame" x="211" y="344" width="42" height="21"/>
+                                <rect key="frame" x="199" y="307" width="101" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" minimumFontSize="10" id="T5C-dc-RyG">
-                                <rect key="frame" x="211" y="378" width="42" height="21"/>
+                                <rect key="frame" x="199" y="341" width="101" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="C1W-Ps-tPf">
+                                <rect key="frame" x="75" y="374" width="118" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="updateDelta:" destination="BKg-mr-nIN" eventType="valueChanged" id="NIV-H3-3lP"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" minimumFontSize="10" id="6KO-t8-vTo">
+                                <rect key="frame" x="199" y="374" width="116" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -493,7 +500,8 @@
                         <outlet property="_amplitudeSlider" destination="GDp-Zc-eLp" id="pCF-ne-nov"/>
                         <outlet property="_bStepper" destination="Rs9-Or-L8G" id="G68-fs-QA7"/>
                         <outlet property="_bValueLabel" destination="T5C-dc-RyG" id="JCb-hu-vFq"/>
-                        <outlet property="_frequencySlider" destination="bTO-YG-rBF" id="Fw7-ls-Jia"/>
+                        <outlet property="_deltaLabel" destination="6KO-t8-vTo" id="xvi-zh-jcL"/>
+                        <outlet property="_deltaSlider" destination="C1W-Ps-tPf" id="lTe-Fh-tw5"/>
                     </connections>
                 </viewController>
             </objects>
@@ -897,12 +905,17 @@
         <class className="BTSLissajousViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSLissajousViewController.h"/>
             <relationships>
+                <relationship kind="action" name="updateA:"/>
+                <relationship kind="action" name="updateAmplitude:"/>
+                <relationship kind="action" name="updateB:"/>
+                <relationship kind="action" name="updateDelta:"/>
                 <relationship kind="outlet" name="_aStepper" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="_aValueLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_amplitudeSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="_bStepper" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="_bValueLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="_frequencySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="_deltaLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="_deltaSlider" candidateClass="UISlider"/>
             </relationships>
         </class>
         <class className="BTSMediaTimingViewController" superclassName="UIViewController">

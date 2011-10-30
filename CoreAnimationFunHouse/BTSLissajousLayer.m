@@ -3,7 +3,7 @@
 //  CoreAnimationFunHouse
 //
 //  Created by Brian Coyner on 10/28/11.
-//  Copyright (c) 2011 Black Software, Inc. All rights reserved.
+//  Copyright (c) 2011 Brian Coyner. All rights reserved.
 //
 
 #import "BTSLissajousLayer.h"
@@ -17,24 +17,24 @@
 @implementation BTSLissajousLayer
 
 static NSString *kBTSLissajouseLayerAmplitude = @"amplitude";
-static NSString *kBTSLissajousLayerFrequency = @"frequency";
 static NSString *kBTSLissajouseLayerPhase = @"phase";
 
 static NSString *kBTSLissajouseLayerA = @"a";
 static NSString *kBTSLissajouseLayerB = @"b";
+static NSString *kBTSLissajouseLayerDelta = @"delta";
 
 @dynamic phase;
-@dynamic frequency;
 @dynamic amplitude;
 
 @dynamic a;
 @dynamic b;
+@dynamic delta;
 
 + (NSSet *)keyPathsForValuesAffectingContent
 {
     static NSSet *keys = nil;
     if (keys == nil) {
-        keys = [[NSSet alloc] initWithObjects:kBTSLissajouseLayerAmplitude, kBTSLissajousLayerFrequency, kBTSLissajouseLayerPhase, kBTSLissajouseLayerA, kBTSLissajouseLayerB, nil];
+        keys = [[NSSet alloc] initWithObjects:kBTSLissajouseLayerAmplitude,  kBTSLissajouseLayerPhase, kBTSLissajouseLayerA, kBTSLissajouseLayerB, kBTSLissajouseLayerDelta, nil];
     }
     return keys;
 }
@@ -46,7 +46,6 @@ static NSString *kBTSLissajouseLayerB = @"b";
     if (self) {
         _currentAnimations = [[NSMutableArray alloc] initWithCapacity:3];
         [self setContentsScale:[[UIScreen mainScreen] scale]];
-        
     }
     return self;
 }
@@ -63,25 +62,24 @@ static NSString *kBTSLissajouseLayerB = @"b";
     
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetLineWidth(context, 2.0);
-    //CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
+    CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
     
     // The layer redraws the content using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
     CGFloat amplitude = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerAmplitude] floatValue];
-    CGFloat frequency = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajousLayerFrequency] floatValue];
     
     CGFloat a = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerA] floatValue];
     CGFloat b = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerB] floatValue];
 
+    CGFloat delta = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerDelta] floatValue];
     CGMutablePathRef path = CGPathCreateMutable();
-    
-    unsigned int stepCount = CGRectGetWidth(bounds);
-    for (CGFloat stepIndex = 0.0; stepIndex <= stepCount; stepIndex++) {
 
-        CGFloat temp = stepIndex * frequency;
-        CGFloat x = amplitude * sin(a * temp);
-        CGFloat y = amplitude * sin(b * temp);
-        if (stepIndex == 0.0) {
+    CGFloat increment = 2 * M_PI / (a * b * 40);
+    for (CGFloat t = 0.0; t < 2 * M_PI + increment; t = t + increment) {
+        
+        CGFloat x = amplitude * sin(a * t + delta);
+        CGFloat y = amplitude * sin(b * t);
+        if (t == 0.0) {
             CGPathMoveToPoint(path, NULL, x, y);
         } else {
             CGPathAddLineToPoint(path, NULL, x, y);
@@ -90,7 +88,6 @@ static NSString *kBTSLissajouseLayerB = @"b";
     
     CGContextAddPath(context, path);
     CGContextStrokePath(context);
-
     CFRelease(path);
 }
 
@@ -105,7 +102,7 @@ static NSString *kBTSLissajouseLayerB = @"b";
         
         [animation setFromValue:valueForKey];
         [animation setDelegate:self];
-        [animation setDuration:2.0];
+        [animation setDuration:1.0];
         
         return animation;
         

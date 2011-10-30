@@ -3,7 +3,7 @@
 //  CoreAnimationFunHouse
 //
 //  Created by Brian Coyner on 10/28/11.
-//  Copyright (c) 2011 Black Software, Inc. All rights reserved.
+//  Copyright (c) 2011 Brian Coyner. All rights reserved.
 //
 
 #import "BTSLissajousView.h"
