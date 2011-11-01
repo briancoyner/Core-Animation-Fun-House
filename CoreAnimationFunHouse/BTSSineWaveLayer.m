@@ -57,7 +57,7 @@ static NSString *kBTSSineWaveLayerPhase = @"phase";
     
     CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetLineWidth(context, 2.0);
-    //CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
+    CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
     
     // The layer redraws the content using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
@@ -66,17 +66,17 @@ static NSString *kBTSSineWaveLayerPhase = @"phase";
     CGFloat phase = [[(NSValue *)[self presentationLayer] valueForKey:kBTSSineWaveLayerPhase] floatValue];
     
     unsigned int stepCount = CGRectGetWidth(bounds);
-    for (int stepIndex = 0; stepIndex < stepCount; stepIndex++) {
-        CGFloat x = stepIndex;
-        CGFloat y = amplitude * sin(x * frequency + phase);
+    for (int t = 0; t <= stepCount; t++) {
+        CGFloat y = amplitude * sin(t * frequency + phase);
         
-        if (stepIndex == 0) {
-            CGContextMoveToPoint(context, x, y);
+        if (t == 0) {
+            CGContextMoveToPoint(context, t, y);
         } else {
-            CGContextAddLineToPoint(context, x, y);
+            CGContextAddLineToPoint(context, t, y);
         }
     }
     
+    CGContextSetLineJoin(context, kCGLineJoinBevel);
     CGContextStrokePath(context);
 }
 
