@@ -11,8 +11,6 @@
 @interface BTSLissajousLayer : CALayer
 
 @property (nonatomic, assign) CGFloat amplitude;
-@property (nonatomic, assign) CGFloat phase;
-
 @property (nonatomic, assign) CGFloat a;
 @property (nonatomic, assign) CGFloat b;
 @property (nonatomic, assign) CGFloat delta;

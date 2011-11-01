@@ -17,13 +17,11 @@
 @implementation BTSLissajousLayer
 
 static NSString *kBTSLissajouseLayerAmplitude = @"amplitude";
-static NSString *kBTSLissajouseLayerPhase = @"phase";
-
 static NSString *kBTSLissajouseLayerA = @"a";
 static NSString *kBTSLissajouseLayerB = @"b";
 static NSString *kBTSLissajouseLayerDelta = @"delta";
 
-@dynamic phase;
+
 @dynamic amplitude;
 
 @dynamic a;
@@ -34,7 +32,7 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
 {
     static NSSet *keys = nil;
     if (keys == nil) {
-        keys = [[NSSet alloc] initWithObjects:kBTSLissajouseLayerAmplitude,  kBTSLissajouseLayerPhase, kBTSLissajouseLayerA, kBTSLissajouseLayerB, kBTSLissajouseLayerDelta, nil];
+        keys = [[NSSet alloc] initWithObjects:kBTSLissajouseLayerAmplitude, kBTSLissajouseLayerA, kBTSLissajouseLayerB, kBTSLissajouseLayerDelta, nil];
     }
     return keys;
 }
