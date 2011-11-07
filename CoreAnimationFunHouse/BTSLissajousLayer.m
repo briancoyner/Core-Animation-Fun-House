@@ -21,10 +21,8 @@ static NSString *kBTSLissajouseLayerA = @"a";
 static NSString *kBTSLissajouseLayerB = @"b";
 static NSString *kBTSLissajouseLayerDelta = @"delta";
 
-
 @dynamic amplitude;
-
-@dynamic a;
+ @dynamic a;
 @dynamic b;
 @dynamic delta;
 
@@ -43,7 +41,7 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
     self = [super init];
     if (self) {
         _currentAnimations = [[NSMutableArray alloc] initWithCapacity:3];
-        [self setContentsScale:[[UIScreen mainScreen] scale]];
+        [self setContentsScale:[[UIScreen mainScreen] scale]];;
     }
     return self;
 }
@@ -57,10 +55,9 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
     CGContextTranslateCTM(context, CGRectGetWidth(bounds) / 2, CGRectGetHeight(bounds) / 2.0);    
     
     BTSDrawCoordinateAxes(context);
-    
-    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
+        CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetLineWidth(context, 2.0);
-    CGContextSetShadow(context, CGSizeMake(5.0, 2.5), 5.0);
+    CGContextSetShadow(context, CGSizeMake(0.0, 2.5), 5.0);
     
     // The layer redraws the curve using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
@@ -135,8 +132,8 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
 
 #pragma mark - Timer Callback
 - (void)animationTimerFired:(NSTimer *)timer
-{
-    [self setNeedsDisplay];
+{    [self setNeedsDisplay];
+
 }
 
 @end

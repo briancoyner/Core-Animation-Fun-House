@@ -82,6 +82,10 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
     if (_touchesToLayers) {
         CFRelease(_touchesToLayers);
     }
+    
+    if (_animationTimer) {
+        [_animationTimer invalidate];
+    }
 }
 
 #pragma mark - Media Timing Function Support
@@ -222,6 +226,9 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (CFDictionaryGetCount(_touchesToLayers) == 0) {
+        return;
+    }
     
     // Turn off implicit actions for the rest of the current run loop.
     // - we do this so that the layer is not implicitly animated when changing the position.
@@ -248,6 +255,10 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if (CFDictionaryGetCount(_touchesToLayers) == 0) {
+        return;
+    }
+    
     for (UITouch *currentTouch in touches) {
         
         CALayer *layer = (__bridge CALayer *)CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)currentTouch);

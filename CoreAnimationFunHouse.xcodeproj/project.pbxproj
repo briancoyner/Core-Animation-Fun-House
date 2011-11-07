@@ -161,6 +161,7 @@
 				5DCD831A1456627900A41FE1 /* Bezier Path */,
 				5DCD831B1456628A00A41FE1 /* Sine Wave */,
 				5D5ED250145B845B00559B40 /* Lissajous */,
+				5DE4AF5014649CBF00B9FE52 /* Rose */,
 				5DCD831D145662BA00A41FE1 /* Utilities */,
 			);
 			path = CoreAnimationFunHouse;
@@ -273,6 +274,13 @@
 				5D284BB2144BD0BA0000650E /* BTSCoreGraphics.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		5DE4AF5014649CBF00B9FE52 /* Rose */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Rose;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
