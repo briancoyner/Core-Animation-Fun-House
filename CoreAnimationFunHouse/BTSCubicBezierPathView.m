@@ -219,6 +219,8 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
                 
                 CGPoint offsetFromCenter = CGPointMake([layer position].x - touchLocationInView.x, [layer position].y - touchLocationInView.y);
                 [layer setValue:[NSValue valueWithCGPoint:offsetFromCenter] forKey:kBTSCubicBezierPathLocationOffset];
+                
+                break;
             }
         }
     }
