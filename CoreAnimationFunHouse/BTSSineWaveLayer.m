@@ -7,9 +7,10 @@
 //
 
 #import "BTSSineWaveLayer.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface BTSSineWaveLayer() {
-    NSTimer *_animationTimer;
+    CADisplayLink *_displayLink;
     NSMutableArray *_currentAnimations;
 }
 @end
@@ -111,8 +112,9 @@ static NSString *kBTSSineWaveLayerPhase = @"phase";
         if ([internalKeys member:[(CAPropertyAnimation *)anim keyPath]]) {
 
             [_currentAnimations addObject:anim];
-            if (_animationTimer == nil) {
-                _animationTimer = [NSTimer scheduledTimerWithTimeInterval:1/60 target:self selector:@selector(animationTimerFired:) userInfo:nil repeats:YES];
+            if (_displayLink == nil) {
+                _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationTimerFired:)];
+                [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
             }
         }
     }
@@ -122,13 +124,17 @@ static NSString *kBTSSineWaveLayerPhase = @"phase";
 {
     [_currentAnimations removeObject:anim];
     if ([_currentAnimations count] == 0) {
-        [_animationTimer invalidate];
-        _animationTimer = nil;
+        [_displayLink invalidate];
+        _displayLink = nil;
+        
+        // hmmm... the use of CADisplayLink seems to miss the final set of interpolated values... let's force a final paint.
+        // note... this was not necessary when using an explicit NSTimer (need to investigate more).
+        [self setNeedsDisplay];
     }
 }
 
 #pragma mark - Timer Callback
-- (void)animationTimerFired:(NSTimer *)timer
+- (void)animationTimerFired:(CADisplayLink *)displayLink
 {
     [self setNeedsDisplay];
 }

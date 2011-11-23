@@ -8,8 +8,10 @@
 
 #import "BTSLissajousLayer.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface BTSLissajousLayer() {
-    NSTimer *_animationTimer;
+    CADisplayLink *_displayLink;
     NSMutableArray *_currentAnimations;
 }
 @end
@@ -22,7 +24,7 @@ static NSString *kBTSLissajouseLayerB = @"b";
 static NSString *kBTSLissajouseLayerDelta = @"delta";
 
 @dynamic amplitude;
- @dynamic a;
+@dynamic a;
 @dynamic b;
 @dynamic delta;
 
@@ -55,7 +57,7 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
     CGContextTranslateCTM(context, CGRectGetWidth(bounds) / 2, CGRectGetHeight(bounds) / 2.0);    
     
     BTSDrawCoordinateAxes(context);
-        CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetLineWidth(context, 2.0);
     CGContextSetShadow(context, CGSizeMake(0.0, 2.5), 5.0);
     
@@ -65,9 +67,9 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
     CGFloat a = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerA] floatValue];
     CGFloat b = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerB] floatValue];
     CGFloat delta = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerDelta] floatValue];
-
+    
     CGMutablePathRef path = CGPathCreateMutable();
-
+    
     CGFloat increment = 2 * M_PI / (a * b * 40);
     for (CGFloat t = 0.0; t < 2 * M_PI + increment; t = t + increment) {
         CGFloat x = amplitude * sin(a * t + delta);
@@ -114,26 +116,31 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
         if ([internalKeys member:[(CAPropertyAnimation *)anim keyPath]]) {
             
             [_currentAnimations addObject:anim];
-            if (_animationTimer == nil) {
-                _animationTimer = [NSTimer scheduledTimerWithTimeInterval:1/60 target:self selector:@selector(animationTimerFired:) userInfo:nil repeats:YES];
+            if (_displayLink == nil) {
+                _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationTimerFired:)];
+                [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
             }
         }
     }
 }
 
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag
 {
-    [_currentAnimations removeObject:anim];
+    [_currentAnimations removeObject:animation];
     if ([_currentAnimations count] == 0) {
-        [_animationTimer invalidate];
-        _animationTimer = nil;
+        [_displayLink invalidate];
+        _displayLink = nil;
+        
+        // hmmm... the use of CADisplayLink seems to miss the final set of interpolated values... let's force a final paint.
+        // note... this was not necessary when using an explicit NSTimer (need to investigate more).
+        [self setNeedsDisplay];
     }
 }
 
 #pragma mark - Timer Callback
-- (void)animationTimerFired:(NSTimer *)timer
-{    [self setNeedsDisplay];
-
+- (void)animationTimerFired:(CADisplayLink *)displayLink
+{    
+    [self setNeedsDisplay];
 }
 
 @end

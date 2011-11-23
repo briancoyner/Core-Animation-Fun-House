@@ -42,15 +42,15 @@
     [_aStepper setMinimumValue:1.0];
     [_aStepper setMaximumValue:10.0];
     [_aStepper setValue:1.0];
-
+    
     [_bStepper setMinimumValue:0.0];
     [_bStepper setMaximumValue:10.0];
     [_bStepper setValue:2.0];
-
+    
     [_deltaSlider setMinimumValue:0.0];
     [_deltaSlider setMaximumValue:2 * M_PI];
     [_deltaSlider setValue:M_PI];
-
+    
     
     [self updateAmplitude:_amplitudeSlider];
     [self updateA:_aStepper];
@@ -70,7 +70,7 @@
     
     _aValueLabel = nil;
     _bValueLabel = nil;
-
+    
     _deltaLabel = nil;
     [super viewDidUnload];
 }
@@ -90,7 +90,7 @@
     BTSLissajousLayer *layer = (BTSLissajousLayer *)[[[self view] viewWithTag:100] layer]; 
     float value = [(UIStepper *)sender value];
     [_aValueLabel setText:[NSString stringWithFormat:@"%0.0f", [_aStepper value]]];
-
+    
     [layer setA:(CGFloat)value];
 }
 

@@ -9,6 +9,5 @@ Examples include:
 - Explicit animations (transforms)
 - Animation along a path 
 - Bézier curve editor (with animation along a path)
-- Create custom `CAMediaTimingFunction` objects using a Bézier curve editor
 - Using a `CAReplicatorLayer` and `CAGradientLayer` to create a reflection (with full sublayer animation support)
 - Wiggle and jiggle (using two explicit animations)

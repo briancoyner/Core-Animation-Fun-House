@@ -42,9 +42,6 @@
     CFMutableDictionaryRef _touchesToLayers;
     
     NSArray *_hitTestLayers;
-    
-    // Used only when transitioning the control points.
-    NSTimer *_animationTimer;
 }
 
 CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer, CALayer *endPointLayer, CALayer *beginPointControlPointLayer, CALayer *endPointControlPointLayer);
@@ -54,8 +51,6 @@ CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer,
 @end
 
 @implementation BTSCubicBezierPathView
-
-@synthesize lockedForMediaTimingFunction = _lockedForMediaTimingFunction;
 
 static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocationOffset";
 
@@ -81,114 +76,6 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
 {
     if (_touchesToLayers) {
         CFRelease(_touchesToLayers);
-    }
-    
-    if (_animationTimer) {
-        [_animationTimer invalidate];
-    }
-}
-
-#pragma mark - Media Timing Function Support
-
-- (void)setLockedForMediaTimingFunction:(BOOL)lockedForMediaTimingFunction
-{
-    _lockedForMediaTimingFunction = lockedForMediaTimingFunction;
-    
-    if (_lockedForMediaTimingFunction) {
-        [[self layer] setGeometryFlipped:YES];
-        _hitTestLayers = [NSArray arrayWithObjects:_beginPointControlPointLayer, _endPointControlPointLayer, nil];
-        
-        CGRect bounds = [self bounds];
-        CGFloat segment = MIN(CGRectGetWidth(bounds), CGRectGetHeight(bounds));
-        
-        [_beginPointLayer setPosition:CGPointMake(0, 0)];
-        [_endPointLayer setPosition:CGPointMake(segment, segment)];
-        
-        [_beginPointControlPointLayer setPosition:[_beginPointLayer position]];
-        [_endPointControlPointLayer setPosition:[_endPointLayer position]];
-        
-        CGPathRef path = BTSPathCreateForCurrentControlPointPositions(_beginPointLayer, _endPointLayer, _beginPointControlPointLayer, _endPointControlPointLayer);
-        [_shapeLayer setPath:path];
-        CFRelease(path);
-    } else {
-        
-        _hitTestLayers = [NSArray arrayWithObjects:_beginPointControlPointLayer, _endPointControlPointLayer, _beginPointLayer, _endPointLayer, nil];
-        [[self layer] setGeometryFlipped:NO];
-    }
-}
-
-- (CAMediaTimingFunction *)currentMediaTimingFunction
-{
-    CGPoint beginPoint = [_beginPointLayer position];
-    CGPoint endPoint = [_endPointLayer position];
-    CGFloat xDistance = ABS(endPoint.x - beginPoint.x);
-    CGFloat yDistance = ABS(endPoint.y - beginPoint.y);
-    
-    CGFloat cpx1 = [_beginPointControlPointLayer position].x / xDistance;
-    CGFloat cpy1 = [_beginPointControlPointLayer position].y / yDistance;    
-    CGFloat cpx2 = [_endPointControlPointLayer position].x / xDistance;
-    CGFloat cpy2 = [_endPointControlPointLayer position].y / yDistance;    
-    
-    return [[CAMediaTimingFunction alloc] initWithControlPoints:cpx1 :cpy1: cpx2 :cpy2];
-}
-
-#pragma mark - Transition Control Points to Default Positions (Animation support)
-
-- (void)timerFired:(NSTimer *)timer
-{
-    CGPathRef path = BTSPathCreateForCurrentControlPointPositions([_beginPointLayer presentationLayer], [_endPointLayer presentationLayer], [_beginPointControlPointLayer presentationLayer], [_endPointControlPointLayer presentationLayer]);
-    [_shapeLayer setPath:path];
-    CFRelease(path);
-}
-
-- (void)animationDidStart:(CAAnimation *)anim
-{
-    _animationTimer = [NSTimer scheduledTimerWithTimeInterval:1/60 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-}
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
-    [_animationTimer invalidate];
-    _animationTimer = nil;
-}
-
-- (void)transitionToMediaTimingFunctionWithName:(NSString *)functionName
-{
-    CGPoint beginPoint = [_beginPointLayer position];
-    CGPoint endPoint = [_endPointLayer position];
-    CGFloat xDistance = ABS(endPoint.x - beginPoint.x);
-    CGFloat yDistance = ABS(endPoint.y - beginPoint.y);
-    
-    CAMediaTimingFunction *function = [CAMediaTimingFunction functionWithName:functionName];
-
-    float values[2];
-    [function getControlPointAtIndex:1 values:values];
-    [_beginPointControlPointLayer setPosition:CGPointMake(values[0] * xDistance, values[1] * yDistance)];
-    
-    [function getControlPointAtIndex:2 values:values];
-    [_endPointControlPointLayer setPosition:CGPointMake(values[0] * xDistance, values[1] * yDistance)];
-    
-    {
-        // A dummy animation that allows us to attach a run loop timer to animate the bezier path as the control points animate 
-        // to their new locations.
-        CABasicAnimation *dummy = [CABasicAnimation animation];
-        [dummy setFromValue:[NSNumber numberWithInt:1]];
-        [dummy setToValue:[NSNumber numberWithInt:2]];
-        [dummy setDelegate:self];
-        [[self layer] addAnimation:dummy forKey:nil];
-    }
-    
-    {
-        // NOTE: Core Animation actually knows how to animate between two paths. Unfortunately, the animation
-        //       is not as smooth as I would like it to be. Comment out the above 'dummy' animation block 
-        //       and uncomment this block to see the difference.
-        //    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
-        //    CGPathRef path = BTSPathCreateForCurrentControlPointPositions(_beginPointLayer, _endPointLayer, _beginPointControlPointLayer, _endPointControlPointLayer);    
-        //    [pathAnimation setFromValue:(id)[_shapeLayer path]];
-        //    [pathAnimation setToValue:(__bridge id)path];
-        //    [_shapeLayer setPath:path];
-        //    [_shapeLayer addAnimation:pathAnimation forKey:@"path"];
-        //    CFRelease(path);    
     }
 }
 

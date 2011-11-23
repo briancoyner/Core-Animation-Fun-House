@@ -233,37 +233,8 @@
                                             <segue destination="BTl-rM-4wN" kind="push" identifier="BTSSinWaveViewController" id="X1a-5T-4CZ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wPw-Nb-ZG9" detailTextLabel="qFQ-e6-0Zg" style="IBUITableViewCellStyleSubtitle" id="NbS-zt-bqz">
-                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Media Timing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wPw-Nb-ZG9">
-                                                    <rect key="frame" x="10" y="2" width="116" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Animate with CAMediaTimingFunctions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qFQ-e6-0Zg">
-                                                    <rect key="frame" x="10" y="24" width="245" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="8yN-iU-syR" kind="push" identifier="BTSMediaTimingViewController" id="xHl-pC-nCw"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Rn6-8d-9i3" detailTextLabel="DUO-oF-4Wp" style="IBUITableViewCellStyleSubtitle" id="JZJ-dE-ASN">
-                                        <rect key="frame" x="0.0" y="352" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -277,7 +248,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Animate with Lissajous Curve" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DUO-oF-4Wp">
-                                                    <rect key="frame" x="10" y="24" width="245" height="18"/>
+                                                    <rect key="frame" x="10" y="24" width="184" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -303,102 +274,6 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="-367" y="23"/>
-        </scene>
-        <scene sceneID="BJ6-nw-qiN">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GfP-Ac-JWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="8yN-iU-syR" customClass="BTSMediaTimingViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JEn-u6-6wC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="9WU-w3-xUe" customClass="BTSCubicBezierPathView">
-                                <rect key="frame" x="30" y="59" width="260" height="260"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="Gq5-09-DNr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mDA-Hu-6Hi">
-                                <rect key="frame" x="30" y="331" width="113" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Linear">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="makeLinear:" destination="8yN-iU-syR" eventType="touchUpInside" id="Bcb-w3-jIi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dUT-1m-7Sj">
-                                <rect key="frame" x="177" y="331" width="113" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Ease In">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="makeEaseIn:" destination="8yN-iU-syR" eventType="touchUpInside" id="s3i-1h-LbC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3ik-sY-ARt">
-                                <rect key="frame" x="28" y="374" width="117" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Ease In / Out">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="makeEaseInEaseOut:" destination="8yN-iU-syR" eventType="touchUpInside" id="jKc-hV-9hb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="O5c-aM-Xpc">
-                                <rect key="frame" x="177" y="374" width="113" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Ease Out">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="makeEaseOut:" destination="8yN-iU-syR" eventType="touchUpInside" id="bl0-bX-XV3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Media Timing" id="FKm-sy-pl7">
-                        <barButtonItem key="rightBarButtonItem" title="Animate" id="6xy-Lk-Tgw">
-                            <connections>
-                                <action selector="animate:" destination="8yN-iU-syR" id="PuX-ZI-O5l"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="_animationContainer" destination="Gq5-09-DNr" id="hPb-7L-KXc"/>
-                        <outlet property="_bezierPathView" destination="9WU-w3-xUe" id="ncr-7s-3sE"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="653" y="2383"/>
         </scene>
         <scene sceneID="hkP-SL-PeT">
             <objects>
@@ -505,7 +380,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="652" y="2963"/>
+            <point key="canvasLocation" x="653" y="2379"/>
         </scene>
         <scene sceneID="Tl0-JF-BZP">
             <objects>
@@ -916,13 +791,6 @@
                 <relationship kind="outlet" name="_bValueLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_deltaLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="_deltaSlider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="BTSMediaTimingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BTSMediaTimingViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="_animationContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="_bezierPathView" candidateClass="BTSCubicBezierPathView"/>
             </relationships>
         </class>
         <class className="BTSPathAnimationViewController" superclassName="UIViewController">

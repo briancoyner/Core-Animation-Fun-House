@@ -125,7 +125,7 @@ static const CGPoint kBTSPathEndPoint = {300, 300};
         // Move the layer to end of the path. This will implicitly animate. However, 
         // the implicit animation is replaced when adding the key frame animation to the 
         // layer (see the "addAnimation:forKey:" method below. 
-        //[layer setPosition:kBTSPathEndPoint];
+        [layer setPosition:kBTSPathEndPoint];
     }
     
     // Start animating the layer along the path.
