@@ -10,6 +10,13 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+static NSString* const kBTSLissajouseLayerAmplitude = @"amplitude";
+static NSString* const kBTSLissajouseLayerA = @"a";
+static NSString* const kBTSLissajouseLayerB = @"b";
+static NSString* const kBTSLissajouseLayerDelta = @"delta";
+
+static const CGFloat TWO_PI = M_PI * 2.0f;
+
 @interface BTSLissajousLayer() {
     CADisplayLink *_displayLink;
     NSMutableArray *_currentAnimations;
@@ -17,11 +24,6 @@
 @end
 
 @implementation BTSLissajousLayer
-
-static NSString *kBTSLissajouseLayerAmplitude = @"amplitude";
-static NSString *kBTSLissajouseLayerA = @"a";
-static NSString *kBTSLissajouseLayerB = @"b";
-static NSString *kBTSLissajouseLayerDelta = @"delta";
 
 @dynamic amplitude;
 @dynamic a;
@@ -40,6 +42,7 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
 #pragma mark - Layer Drawing
 
 - (id)init {
+    
     self = [super init];
     if (self) {
         _currentAnimations = [[NSMutableArray alloc] initWithCapacity:3];
@@ -68,14 +71,17 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
     CGFloat b = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerB] floatValue];
     CGFloat delta = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerDelta] floatValue];
     
+    CGFloat increment = TWO_PI / (a * b * 40.0f);
     CGMutablePathRef path = CGPathCreateMutable();
     
-    CGFloat increment = 2 * M_PI / (a * b * 40);
-    for (CGFloat t = 0.0; t < 2 * M_PI + increment; t = t + increment) {
+    BOOL shouldMoveToPoint = YES;
+    
+    for (CGFloat t = 0.0; t < TWO_PI + increment; t = t + increment) {
         CGFloat x = amplitude * sin(a * t + delta);
         CGFloat y = amplitude * sin(b * t);
-        if (t == 0.0) {
+        if (shouldMoveToPoint) {
             CGPathMoveToPoint(path, NULL, x, y);
+            shouldMoveToPoint = NO;
         } else {
             CGPathAddLineToPoint(path, NULL, x, y);
         }
@@ -89,7 +95,7 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
 
 - (id<CAAction>)actionForKey:(NSString *)event
 {
-    // Called when layer's property changes.
+    // Called when a property changes.
     
     if ([[BTSLissajousLayer keyPathsForValuesAffectingContent] member:event]) {
         
@@ -138,6 +144,7 @@ static NSString *kBTSLissajouseLayerDelta = @"delta";
 }
 
 #pragma mark - Timer Callback
+
 - (void)animationTimerFired:(CADisplayLink *)displayLink
 {    
     [self setNeedsDisplay];

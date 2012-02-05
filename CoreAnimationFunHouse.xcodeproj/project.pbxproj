@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D0060411435FB2700615004 /* BTSPulseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0060401435FB2700615004 /* BTSPulseViewController.m */; };
+		5D24F6F314D7267D00ECA6E8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D24F6F214D7267D00ECA6E8 /* Accelerate.framework */; };
 		5D284BA1144BB57E0000650E /* BTSSineWaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D284BA0144BB57E0000650E /* BTSSineWaveLayer.m */; };
 		5D284BA3144BB7A20000650E /* BTSSineWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D284BA2144BB7A20000650E /* BTSSineWaveView.m */; };
 		5D284BB3144BD0BA0000650E /* BTSCoreGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D284BB2144BD0BA0000650E /* BTSCoreGraphics.m */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		5D00603F1435FB2700615004 /* BTSPulseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSPulseViewController.h; sourceTree = "<group>"; };
 		5D0060401435FB2700615004 /* BTSPulseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSPulseViewController.m; sourceTree = "<group>"; };
+		5D24F6F214D7267D00ECA6E8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		5D284B9F144BB5310000650E /* BTSSineWaveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSSineWaveLayer.h; sourceTree = "<group>"; };
 		5D284BA0144BB57E0000650E /* BTSSineWaveLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSSineWaveLayer.m; sourceTree = "<group>"; };
 		5D284BA2144BB7A20000650E /* BTSSineWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSSineWaveView.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D24F6F314D7267D00ECA6E8 /* Accelerate.framework in Frameworks */,
 				5D6FBC86142BBB2F0015A945 /* QuartzCore.framework in Frameworks */,
 				5D6FBC66142BB9A80015A945 /* UIKit.framework in Frameworks */,
 				5D6FBC68142BB9A80015A945 /* Foundation.framework in Frameworks */,
@@ -138,6 +141,7 @@
 		5D6FBC64142BB9A80015A945 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D24F6F214D7267D00ECA6E8 /* Accelerate.framework */,
 				5D6FBC85142BBB2F0015A945 /* QuartzCore.framework */,
 				5D6FBC65142BB9A80015A945 /* UIKit.framework */,
 				5D6FBC67142BB9A80015A945 /* Foundation.framework */,
