@@ -11,6 +11,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+static NSString * const kBTSPulseAnimation = @"BTSPulseAnimation";
+
 //
 // This example shows how to create an explicit animation and change the scaling factor to simulate a "pulse" effect. 
 //
@@ -30,7 +32,7 @@
 
 @implementation BTSPulseViewController
 
-static NSString *kBTSPulseAnimation = @"BTSPulseAnimation";
+
 
 @synthesize animationDurationLabel = _animationDurationLabel;
 

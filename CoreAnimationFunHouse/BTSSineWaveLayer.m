@@ -9,6 +9,10 @@
 #import "BTSSineWaveLayer.h"
 #import <QuartzCore/QuartzCore.h>
 
+static NSString * const kBTSSineWaveLayerAmplitude = @"amplitude";
+static NSString * const kBTSSineWaveLayerFrequency = @"frequency";
+static NSString * const kBTSSineWaveLayerPhase = @"phase";
+
 @interface BTSSineWaveLayer() {
     CADisplayLink *_displayLink;
     NSMutableArray *_currentAnimations;
@@ -17,9 +21,6 @@
 
 @implementation BTSSineWaveLayer
 
-static NSString *kBTSSineWaveLayerAmplitude = @"amplitude";
-static NSString *kBTSSineWaveLayerFrequency = @"frequency";
-static NSString *kBTSSineWaveLayerPhase = @"phase";
 
 // CALayer calls 'actionForKey:' for any custom dynmamic property. 
 @dynamic phase;

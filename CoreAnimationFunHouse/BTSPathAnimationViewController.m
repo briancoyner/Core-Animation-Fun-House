@@ -9,6 +9,8 @@
 #import "BTSPathAnimationViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+static const CGPoint kBTSPathEndPoint = {300, 300};
+
 @interface BTSPathAnimationViewController() {
     CGMutablePathRef _path;
 }
@@ -20,7 +22,7 @@
 // This example shows just how easy it is to animate a layer along an arbitrary path.
 @implementation BTSPathAnimationViewController 
 
-static const CGPoint kBTSPathEndPoint = {300, 300};
+
 
 - (void)dealloc
 {

@@ -10,8 +10,8 @@
 
 @implementation CALayer (WiggleAnimationAdditions)
 
-static NSString *kBTSWiggleTransformAnimation = @"BTSWiggleTransformAnimation";
-static NSString *kBTSWiggleTransformTranslationXAnimation = @"BTSWiggleTransformTranslationXAnimation";
+static NSString * const kBTSWiggleTransformAnimation = @"BTSWiggleTransformAnimation";
+static NSString * const kBTSWiggleTransformTranslationXAnimation = @"BTSWiggleTransformTranslationXAnimation";
 
 - (void)bts_startWiggling
 {
