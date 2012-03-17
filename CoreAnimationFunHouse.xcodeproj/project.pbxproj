@@ -300,7 +300,7 @@
 		5D6FBC58142BB9A80015A945 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Black Software, Inc.";
 			};
 			buildConfigurationList = 5D6FBC5B142BB9A80015A945 /* Build configuration list for PBXProject "CoreAnimationFunHouse" */;
