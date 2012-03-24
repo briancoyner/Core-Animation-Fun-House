@@ -9,15 +9,6 @@
 #import "BTSWiggleViewController.h"
 #import "CALayer+WiggleAnimationAdditions.h"
 
-#import <QuartzCore/QuartzCore.h>
-
-@interface BTSWiggleViewController() 
-
-- (void)startWiggling:(UIGestureRecognizer *)gesture;
-- (void)stopWiggling:(UIGestureRecognizer *)gesture;
-
-@end
-
 @implementation BTSWiggleViewController
 
 - (void)viewDidLoad
@@ -27,15 +18,15 @@
     [[self view] setBackgroundColor:[UIColor scrollViewTexturedBackgroundColor]];
     
     CALayer *layer = [CALayer layer];
-    [layer setContents:(id)[UIImage imageNamed:@"american-flag.png"].CGImage];
+    [layer setContents:(__bridge id)[UIImage imageNamed:@"american-flag.png"].CGImage];
     [layer setContentsScale:[[UIScreen mainScreen] scale]];
-    [layer setBounds:CGRectMake(0, 0, 200, 200)];
+    [layer setBounds:CGRectMake(0.0, 0.0, 200.0, 200.0)];
 
     CGRect viewBounds = [[self view] frame];
-    [layer setPosition:CGPointMake(viewBounds.size.width / 2, viewBounds.size.height / 2 - viewBounds.origin.y)];
+    [layer setPosition:CGPointMake(viewBounds.size.width / 2.0, viewBounds.size.height / 2.0 - viewBounds.origin.y)];
     [layer setShadowColor:[UIColor blackColor].CGColor];
     [layer setShadowOpacity:0.9];
-    [layer setShadowRadius:[layer bounds].size.width / 18];
+    [layer setShadowRadius:[layer bounds].size.width / 18.0];
     [layer setShadowOffset:CGSizeMake(2.0, 2.0)];
     [layer setShadowPath:[UIBezierPath bezierPathWithRect:[layer bounds]].CGPath];
     

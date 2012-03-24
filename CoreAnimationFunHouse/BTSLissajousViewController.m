@@ -8,7 +8,6 @@
 
 #import "BTSLissajousViewController.h"
 
-#import "BTSLissajousView.h"
 #import "BTSLissajousLayer.h"
 
 @interface BTSLissajousViewController() {
@@ -21,10 +20,7 @@
     __weak IBOutlet UILabel *_aValueLabel;
     __weak IBOutlet UILabel *_bValueLabel;
 }
-- (IBAction)updateAmplitude:(id)sender;
-- (IBAction)updateA:(id)sender;
-- (IBAction)updateB:(id)sender;
-- (IBAction)updateDelta:(id)sender;
+
 @end
 
 @implementation BTSLissajousViewController
@@ -48,8 +44,8 @@
     [_bStepper setValue:2.0];
     
     [_deltaSlider setMinimumValue:0.0];
-    [_deltaSlider setMaximumValue:2 * M_PI];
-    [_deltaSlider setValue:M_PI];
+    [_deltaSlider setMaximumValue:(float) (2.0 * M_PI)];
+    [_deltaSlider setValue:(float) M_PI];
     
     
     [self updateAmplitude:_amplitudeSlider];
@@ -88,7 +84,7 @@
 
 - (IBAction)updateA:(id)sender {
     BTSLissajousLayer *layer = (BTSLissajousLayer *)[[[self view] viewWithTag:100] layer]; 
-    float value = [(UIStepper *)sender value];
+    float value = (float) [(UIStepper *)sender value];
     [_aValueLabel setText:[NSString stringWithFormat:@"%0.0f", [_aStepper value]]];
     
     [layer setA:(CGFloat)value];
@@ -96,7 +92,7 @@
 
 - (IBAction)updateB:(id)sender {
     BTSLissajousLayer *layer = (BTSLissajousLayer *)[[[self view] viewWithTag:100] layer]; 
-    float value = [(UIStepper *)sender value];
+    float value = (float) [(UIStepper *)sender value];
     [_bValueLabel setText:[NSString stringWithFormat:@"%0.0f", [_bStepper value]]];    
     [layer setB:(CGFloat)value];
 }
@@ -104,7 +100,7 @@
 - (IBAction)updateDelta:(id)sender {
     BTSLissajousLayer *layer = (BTSLissajousLayer *)[[[self view] viewWithTag:100] layer]; 
     float value = [(UISlider *)sender value];
-    [_deltaLabel setText:[NSString stringWithFormat:@"%1.3f (%1.1F°)", value, value * (180/ M_PI)]];    
+    [_deltaLabel setText:[NSString stringWithFormat:@"%1.3f (%1.1F°)", value, value * (180.0/ M_PI)]];
     [layer setDelta:(CGFloat)value];
 }
 

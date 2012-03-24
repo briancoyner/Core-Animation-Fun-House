@@ -42,10 +42,10 @@
     CGRect bounds = [self bounds];
     CGPoint center = {CGRectGetMidX(bounds), CGRectGetMidY(bounds)};
     
-    int strokeWidth = 2;
+    CGFloat strokeWidth = 2.0;
     
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddArc(path, NULL, center.x, center.y, bounds.size.width / 2 - strokeWidth, 0.0, M_PI * 2, 0);
+    CGPathAddArc(path, NULL, center.x, center.y, bounds.size.width / 2 - strokeWidth, 0.0, (CGFloat) (M_PI * 2.0), 0);
     
     CGContextAddPath(context, path);
     CGContextSetFillColorWithColor(context, [[UIColor redColor] colorWithAlphaComponent:0.5].CGColor);

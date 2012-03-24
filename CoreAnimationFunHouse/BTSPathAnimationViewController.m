@@ -9,20 +9,16 @@
 #import "BTSPathAnimationViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-static const CGPoint kBTSPathEndPoint = {300, 300};
+static const CGPoint kBTSPathEndPoint = {300.0, 300.0};
 
 @interface BTSPathAnimationViewController() {
     CGMutablePathRef _path;
 }
 
-- (void)addPathAnimationToLayer:(CALayer *)layer shouldRepeat:(BOOL)shouldRepeat;
 @end
 
-//
 // This example shows just how easy it is to animate a layer along an arbitrary path.
 @implementation BTSPathAnimationViewController 
-
-
 
 - (void)dealloc
 {
@@ -38,20 +34,20 @@ static const CGPoint kBTSPathEndPoint = {300, 300};
     
     {   // Create a path to animate a layer on. We will also draw the path.
         _path = CGPathCreateMutable();
-        CGPathMoveToPoint(_path, NULL, 15, 15);
-        CGPathAddLineToPoint(_path, NULL, 100, 100);
-        CGPathAddArc(_path, NULL, 100, 100, 75, 0.0, M_PI, 1);
-        CGPathAddLineToPoint(_path, NULL, 200, 150);
-        CGPathAddCurveToPoint(_path, NULL, 150, 150, 50, 350, kBTSPathEndPoint.x, kBTSPathEndPoint.y);
+        CGPathMoveToPoint(_path, NULL, 15.0, 15.0);
+        CGPathAddLineToPoint(_path, NULL, 100.0, 100.0);
+        CGPathAddArc(_path, NULL, 100.0, 100.0, 75.0, 0.0, (CGFloat) M_PI, 1);
+        CGPathAddLineToPoint(_path, NULL, 200.0, 150.0);
+        CGPathAddCurveToPoint(_path, NULL, 150.0, 150.0, 50.0, 350.0, kBTSPathEndPoint.x, kBTSPathEndPoint.y);
     }
     
     // This is the layer that animates along the path. 
     CALayer *layer = [CALayer layer];
     
     [layer setShadowColor:[UIColor blackColor].CGColor];
-    [layer setContents:(id)[UIImage imageNamed:@"american-flag.png"].CGImage];
-    [layer setBounds:CGRectMake(0, 0, 75, 75)];
-    [layer setPosition:CGPointMake(15, 15)];
+    [layer setContents:(__bridge id)[UIImage imageNamed:@"american-flag.png"].CGImage];
+    [layer setBounds:CGRectMake(0.0, 0.0, 75.0, 75.0)];
+    [layer setPosition:CGPointMake(15.0, 15.0)];
     [layer setShadowPath:[UIBezierPath bezierPathWithRect:[layer bounds]].CGPath];
     [layer setShadowOpacity:0.8];
     [layer setShadowOffset:CGSizeMake(5.0, 5.0)];

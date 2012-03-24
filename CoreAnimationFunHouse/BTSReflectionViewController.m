@@ -10,11 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface BTSReflectionViewController() {
-
     CALayer *_imageLayer;
 }
-
-- (void)animateTextLayer:(UIGestureRecognizer *)recognizer;
 
 @end
 
@@ -49,7 +46,7 @@
     // =      =
     // 
     //           = total height of layer
-    [replicatorLayer setBounds:CGRectMake(0, 0, [image size].width, [image size].height * 1.5)];
+    [replicatorLayer setBounds:CGRectMake(0.0, 0.0, [image size].width, [image size].height * 1.5)];
     
     // This ensures that the replicated image is clipped to the replicator's height
     [replicatorLayer setMasksToBounds:YES];
@@ -58,7 +55,7 @@
     // - use the x center point to make the math easy (place in center of view)
     // - use the y upper point to position the layer 10 points below the top of the view (just a little bit of padding)
     [replicatorLayer setAnchorPoint:CGPointMake(0.5, 0.0)];
-    [replicatorLayer setPosition:CGPointMake([self view].frame.size.width / 2, 10)];
+    [replicatorLayer setPosition:CGPointMake([self view].frame.size.width / 2.0, 10.0)];
 
     // We need two instances: 
     //   1) the main image layer 
@@ -94,7 +91,7 @@
     // *      *    image height
     // *  ^^  *
     // ********    
-    transform = CATransform3DScale(transform, 1, -1, 1);
+    transform = CATransform3DScale(transform, 1.0, -1.0, 1.0);
     
     // translate down by 2x height to position the "flipped" layer below the main layer
     // - 2x moves the flipped image under the main image giving us the "reflection"
@@ -109,14 +106,14 @@
     // =      =    <-- Remember: only half of the "relection" layer renders because the replicator layer clips to bounds.
     // =  %%  =
     // ========  
-    transform = CATransform3DTranslate(transform, 0, -[image size].height * 2, 1);
+    transform = CATransform3DTranslate(transform, 0.0, -[image size].height * 2.0, 1.0);
        
     [replicatorLayer setInstanceTransform:transform];
     
     // Next we create a layer that displays the American flag image.
     _imageLayer = [CALayer layer];
     [_imageLayer setContentsScale:[[UIScreen mainScreen] scale]];
-    [_imageLayer setContents:(id)image.CGImage];
+    [_imageLayer setContents:(__bridge id)image.CGImage];
     [_imageLayer setBounds:CGRectMake(0.0, 0.0, [image size].width, [image size].height)];
     [_imageLayer setAnchorPoint:CGPointMake(0.0, 0.0)];
 
@@ -125,12 +122,12 @@
     // Finally overlay a gradient layer on top of the "reflection" layer. 
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     [gradientLayer setContentsScale:[[UIScreen mainScreen] scale]];
-    [gradientLayer setColors:[NSArray arrayWithObjects:(id)[[UIColor whiteColor] colorWithAlphaComponent:0.25].CGColor, [UIColor whiteColor].CGColor, nil]];
+    [gradientLayer setColors:[NSArray arrayWithObjects:(__bridge id)[[UIColor whiteColor] colorWithAlphaComponent:0.25].CGColor, [UIColor whiteColor].CGColor, nil]];
     
     // Remember that the reflected layer is half the size, which is why the height of the gradient layer is cut in half.
-    [gradientLayer setBounds:CGRectMake(0, 0, replicatorLayer.frame.size.width, [image size].height * 0.5 + 1)];
+    [gradientLayer setBounds:CGRectMake(0.0, 0.0, replicatorLayer.frame.size.width, [image size].height * 0.5 + 1.0)];
     [gradientLayer setAnchorPoint:CGPointMake(0.5, 0.0)];
-    [gradientLayer setPosition:CGPointMake([self view].frame.size.width / 2, [image size].height + 10)];
+    [gradientLayer setPosition:CGPointMake([self view].frame.size.width / 2, [image size].height + 10.0)];
     [gradientLayer setZPosition:1]; // make sure the gradient is placed on top of the reflection.
 
     [[[self view] layer] addSublayer:replicatorLayer];
@@ -146,9 +143,9 @@
     [textLayer setAlignmentMode:kCAAlignmentCenter];
     [textLayer setShadowColor:[UIColor blackColor].CGColor];
     [textLayer setShadowOpacity:1.0];
-    [textLayer setShadowOffset:CGSizeMake(-4, -4)];
-    [textLayer setBounds:CGRectMake(0, 0, [_imageLayer frame].size.width, 30)];
-    [textLayer setPosition:CGPointMake([_imageLayer frame].size.width / 2, [_imageLayer frame].size.height - 25)];
+    [textLayer setShadowOffset:CGSizeMake(-4.0, -4.0)];
+    [textLayer setBounds:CGRectMake(0.0, 0.0, [_imageLayer frame].size.width, 30.0)];
+    [textLayer setPosition:CGPointMake([_imageLayer frame].size.width / 2.0, [_imageLayer frame].size.height - 25.0)];
     [textLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
     [_imageLayer addSublayer:textLayer];
     
@@ -164,7 +161,7 @@
     
     CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"position.y"];
     
-    CGFloat halfBoxHeight = [textLayer frame].size.height / 2;
+    CGFloat halfBoxHeight = [textLayer frame].size.height / 2.0;
     [anim setFromValue:[NSNumber numberWithFloat:[textLayer frame].origin.y + halfBoxHeight]];
     [anim setToValue:[NSNumber numberWithFloat:halfBoxHeight]];
     [anim setDuration:3.0];

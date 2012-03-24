@@ -8,7 +8,6 @@
 
 #import "BTSSineWaveViewController.h"
 #import "BTSSineWaveLayer.h"
-#import "BTSSineWaveView.h"
 
 @interface BTSSineWaveViewController() {
     
@@ -40,11 +39,11 @@
     [_amplitudeSlider setValue:[_amplitudeSlider maximumValue] / 2.0];
     
     [_frequencySlider setMinimumValue:0.0];
-    [_frequencySlider setMaximumValue:(2*M_PI / [layer bounds].size.width) * 10.0];
+    [_frequencySlider setMaximumValue:(float) ((2*M_PI / [layer bounds].size.width) * 10.0)];
     [_frequencySlider setValue:[_frequencySlider maximumValue]/ 2.0];
     
-    [_phaseSlider setMinimumValue:-M_PI];
-    [_phaseSlider setMaximumValue:M_PI];
+    [_phaseSlider setMinimumValue:(float) -M_PI];
+    [_phaseSlider setMaximumValue:(float) M_PI];
     [_phaseSlider setValue:0.0];
     
     [layer setAmplitude:[_amplitudeSlider value]];

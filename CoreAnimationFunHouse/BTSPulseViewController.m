@@ -9,8 +9,6 @@
 #import "BTSPulseViewController.h"
 #import "BTSAnchorPointLayer.h"
 
-#import <QuartzCore/QuartzCore.h>
-
 static NSString * const kBTSPulseAnimation = @"BTSPulseAnimation";
 
 //
@@ -25,14 +23,9 @@ static NSString * const kBTSPulseAnimation = @"BTSPulseAnimation";
 
 @property (strong, nonatomic) IBOutlet UILabel *animationDurationLabel;
 
-- (void)beginAnimatingLayer;
-- (void)endAnimatingLayer;
-
 @end
 
 @implementation BTSPulseViewController
-
-
 
 @synthesize animationDurationLabel = _animationDurationLabel;
 
@@ -45,12 +38,12 @@ static NSString * const kBTSPulseAnimation = @"BTSPulseAnimation";
     // Create a new layer and add it to the view's layer
     _layer = [CALayer layer];
     [_layer setContentsScale:[[UIScreen mainScreen] scale]];
-    [_layer setContents:(id)[UIImage imageNamed:@"american-flag.png"].CGImage];
-    [_layer setBounds:CGRectMake(0, 0, 200, 200)];
+    [_layer setContents:(__bridge id)[UIImage imageNamed:@"american-flag.png"].CGImage];
+    [_layer setBounds:CGRectMake(0.0, 0.0, 200.0, 200.0)];
     
     CGRect frame = [[self view] bounds];
-    CGFloat x = frame.size.width / 2;
-    CGFloat y = (frame.size.width / 2) - 50;
+    CGFloat x = frame.size.width / 2.0;
+    CGFloat y = (frame.size.width / 2.0) - 50.0;
     [_layer setPosition:CGPointMake(x, y)]; 
     
     BTSAnchorPointLayer *anchorPointLayer = [[BTSAnchorPointLayer alloc] init];
@@ -81,7 +74,7 @@ static NSString * const kBTSPulseAnimation = @"BTSPulseAnimation";
     [pulseAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     
     // Scale the layer to half the size
-    CATransform3D transform = CATransform3DMakeScale(0.50, 0.50, 1);
+    CATransform3D transform = CATransform3DMakeScale(0.50, 0.50, 1.0);
     
     // Tell CA to interpolate to this transformation matrix
     [pulseAnimation setToValue:[NSValue valueWithCATransform3D:CATransform3DIdentity]];

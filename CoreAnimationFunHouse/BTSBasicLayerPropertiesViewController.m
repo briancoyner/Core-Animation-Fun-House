@@ -9,9 +9,7 @@
 #import "BTSBasicLayerPropertiesViewController.h"
 #import "BTSAnchorPointLayer.h"
 
-#import <QuartzCore/QuartzCore.h>
-
-// This view controller shows how various Core Animation CALayer properties implicitly animate. 
+// This view controller shows how various Core Animation CALayer properties implicitly animate.
 // - position, corner radius, border, color, size, etc.
 
 @interface BTSBasicLayerPropertiesViewController() {
@@ -23,8 +21,6 @@
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *animationDurationLabel;
- 
-- (IBAction)animationDurationChanged:(id)sender;
 
 @end
 
@@ -53,7 +49,7 @@
     _layer = [CALayer layer];
     [_layer setContentsScale:[[UIScreen mainScreen] scale]];
     [_layer setBackgroundColor:[UIColor blueColor].CGColor];
-    [_layer setBounds:CGRectMake(0, 0, 200, 200)];
+    [_layer setBounds:CGRectMake(0.0, 0.0, 200.0, 200.0)];
     
     CGPoint anchorPoint = {0.5, 0.0};
     [_layer setAnchorPoint:anchorPoint];
@@ -69,10 +65,10 @@
    
     // Because the CALayer anchor point is {0.5,0.0}, we can simply set X to the center of the width.
     // This centers the layer on the X axis.
-    CGFloat x = frame.size.width / 2;
+    CGFloat x = frame.size.width / 2.0;
 
     // Position the layer 10 points from the top of the view.
-    CGFloat y = 10;
+    CGFloat y = 10.0;
     [_layer setPosition:CGPointMake(x, y)];    
 
     [[[self view] layer] addSublayer:_layer];
@@ -135,7 +131,7 @@
     [CATransaction setAnimationDuration:_animationDuration];
     
     CGRect layerBounds = _layer.bounds;
-    layerBounds.size.width  = (layerBounds.size.width == layerBounds.size.height) ? 250 : 200;
+    layerBounds.size.width  = (layerBounds.size.width == layerBounds.size.height) ? 250.0 : 200.0;
     [_layer setBounds:layerBounds];
     
     BTSAnchorPointLayer *anchorPointLayer = [[_layer sublayers] objectAtIndex:0];

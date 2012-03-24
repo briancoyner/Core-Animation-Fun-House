@@ -7,7 +7,6 @@
 //
 
 #import "BTSSineWaveLayer.h"
-#import <QuartzCore/QuartzCore.h>
 
 static NSString * const kBTSSineWaveLayerAmplitude = @"amplitude";
 static NSString * const kBTSSineWaveLayerFrequency = @"frequency";
@@ -21,13 +20,21 @@ static NSString * const kBTSSineWaveLayerPhase = @"phase";
 
 @implementation BTSSineWaveLayer
 
+// NOTE: This shows a technique for capturing screen refreshes that allow the layer to redraw.
+//       You can actually remove the CADisplayLink and simply override the 'needsDisplayForKey:'
+//       method to return the dynamic property key names. This example, thought, I show how to capture 
+//       a "screen refresh". This technique is useful if you need more logic than simply "re-drawing".
+//       See my 'Core Animation Pie Chart' example on GitHub.
+//
+// NOTE: Sometimes the 'needsDisplayForKey:' can produce undesired 'flickering' effects. I have yet to 
+//       see any undesired 'flickering' effects using the CADisplayLink approach.
 
 // CALayer calls 'actionForKey:' for any custom dynmamic property. 
 @dynamic phase;
 @dynamic frequency;
 @dynamic amplitude;
 
-+ (NSSet *)keyPathsForValuesAffectingContent
++ (NSSet *)keyPathsForDynamicProperties
 {
     static NSSet *keys = nil;
     if (keys == nil) {
@@ -67,9 +74,9 @@ static NSString * const kBTSSineWaveLayerPhase = @"phase";
     CGFloat frequency = [[(NSValue *)[self presentationLayer] valueForKey:kBTSSineWaveLayerFrequency] floatValue];
     CGFloat phase = [[(NSValue *)[self presentationLayer] valueForKey:kBTSSineWaveLayerPhase] floatValue];
     
-    unsigned int stepCount = CGRectGetWidth(bounds);
+    unsigned int stepCount = (unsigned int) CGRectGetWidth(bounds);
     for (int t = 0; t <= stepCount; t++) {
-        CGFloat y = amplitude * sin(t * frequency + phase);
+        CGFloat y = (CGFloat) (amplitude * sin(t * frequency + phase));
         
         if (t == 0) {
             CGContextMoveToPoint(context, t, y);
@@ -88,7 +95,7 @@ static NSString * const kBTSSineWaveLayerPhase = @"phase";
 {
     // Called when layer's property changes.
 
-    if ([[BTSSineWaveLayer keyPathsForValuesAffectingContent] member:event]) {
+    if ([[BTSSineWaveLayer keyPathsForDynamicProperties] member:event]) {
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
         NSValue *valueForKey = [[self presentationLayer] valueForKey:event];
@@ -109,7 +116,7 @@ static NSString * const kBTSSineWaveLayerPhase = @"phase";
 - (void)animationDidStart:(CAAnimation *)anim
 {
     if ([anim isKindOfClass:[CAPropertyAnimation class]]) {
-        NSSet *internalKeys = [BTSSineWaveLayer keyPathsForValuesAffectingContent];
+        NSSet *internalKeys = [BTSSineWaveLayer keyPathsForDynamicProperties];
         if ([internalKeys member:[(CAPropertyAnimation *)anim keyPath]]) {
 
             [_currentAnimations addObject:anim];

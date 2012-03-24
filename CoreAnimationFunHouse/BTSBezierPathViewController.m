@@ -20,8 +20,6 @@
     CALayer *_layer;
 }
 
-- (void)updateAnimationForPath:(CGPathRef)path;
-
 @end
 
 @implementation BTSBezierPathViewController 
@@ -35,8 +33,8 @@ static void * kBezierPathChangedContextKey = &kBezierPathChangedContextKey;
     // This is the layer that will animate along the path when the user presses the "animateButton".
     _layer = [CALayer layer];
     [_layer setContentsScale:[[UIScreen mainScreen] scale]];
-    [_layer setContents:(id)[UIImage imageNamed:@"american-flag.png"].CGImage];
-    [_layer setBounds:CGRectMake(0, 0, 60, 60)];
+    [_layer setContents:(__bridge id)[UIImage imageNamed:@"american-flag.png"].CGImage];
+    [_layer setBounds:CGRectMake(0.0, 0.0, 60.0, 60.0)];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

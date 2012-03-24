@@ -2,6 +2,8 @@
 //  Copyright (c) 2011 Brian Coyner. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
+#import <stdio.h>
 #import "BTSCoreGraphics.h"
 
 static void BTSPrintCurrentCTM(CGContextRef context) 

@@ -8,16 +8,18 @@
 
 #import "BTSLissajousLayer.h"
 
-#import <QuartzCore/QuartzCore.h>
-
 static NSString* const kBTSLissajouseLayerAmplitude = @"amplitude";
 static NSString* const kBTSLissajouseLayerA = @"a";
 static NSString* const kBTSLissajouseLayerB = @"b";
 static NSString* const kBTSLissajouseLayerDelta = @"delta";
 
-static const CGFloat TWO_PI = M_PI * 2.0f;
+static const CGFloat TWO_PI = (CGFloat) (M_PI * 2.0f);
+
+// NOTE: Sometimes the 'needsDisplayForKey:' (as described in 'BTSSineWaveLayer.m') can produce undesired 'flickering' effects. 
+//       I have yet to see any undesired 'flickering' effects using the CADisplayLink approach.
 
 @interface BTSLissajousLayer() {
+    CADisplayLink *_displayLink;
     NSMutableArray *_currentAnimations;
 }
 @end
@@ -29,18 +31,13 @@ static const CGFloat TWO_PI = M_PI * 2.0f;
 @dynamic b;
 @dynamic delta;
 
-+ (NSSet *)keyPathsForCustomDisplayDrawing
++ (NSSet *)keyPathsForDynamicProperties
 {
     static NSSet *keys = nil;
     if (keys == nil) {
         keys = [[NSSet alloc] initWithObjects:kBTSLissajouseLayerAmplitude, kBTSLissajouseLayerA, kBTSLissajouseLayerB, kBTSLissajouseLayerDelta, nil];
     }
     return keys;
-}
-
-+ (BOOL)needsDisplayForKey:(NSString *)key
-{
-    return [[self keyPathsForCustomDisplayDrawing] containsObject:key]; 
 }
 
 #pragma mark - Layer Drawing
@@ -101,7 +98,7 @@ static const CGFloat TWO_PI = M_PI * 2.0f;
 {
     // Called when a property changes.
     
-    if ([[BTSLissajousLayer keyPathsForCustomDisplayDrawing] member:event]) {
+    if ([[BTSLissajousLayer keyPathsForDynamicProperties] member:event]) {
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
         NSValue *valueForKey = [[self presentationLayer] valueForKey:event];
@@ -115,6 +112,43 @@ static const CGFloat TWO_PI = M_PI * 2.0f;
     } else {
         return [super actionForKey:event];
     }
+}
+
+#pragma mark - Animation Delegate Callbacks
+
+- (void)animationDidStart:(CAAnimation *)anim
+{
+    if ([anim isKindOfClass:[CAPropertyAnimation class]]) {
+        NSSet *internalKeys = [BTSLissajousLayer keyPathsForDynamicProperties];
+        if ([internalKeys member:[(CAPropertyAnimation *)anim keyPath]]) {
+            
+            [_currentAnimations addObject:anim];
+            if (_displayLink == nil) {
+                _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationTimerFired:)];
+                [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+            }
+        }
+    }
+}
+
+- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag
+{
+    [_currentAnimations removeObject:animation];
+    if ([_currentAnimations count] == 0) {
+        [_displayLink invalidate];
+        _displayLink = nil;
+        
+        // hmmm... the use of CADisplayLink seems to miss the final set of interpolated values... let's force a final paint.
+        // note... this was not necessary when using an explicit NSTimer (need to investigate more).
+        [self setNeedsDisplay];
+    }
+}
+
+#pragma mark - Timer Callback
+
+- (void)animationTimerFired:(CADisplayLink *)displayLink
+{    
+    [self setNeedsDisplay];
 }
 
 @end

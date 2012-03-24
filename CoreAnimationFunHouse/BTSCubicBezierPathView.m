@@ -46,8 +46,6 @@
 
 CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer, CALayer *endPointLayer, CALayer *beginPointControlPointLayer, CALayer *endPointControlPointLayer);
 
-- (void)initLayers;
-
 @end
 
 @implementation BTSCubicBezierPathView
@@ -100,7 +98,7 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
             // to pick up and move a control point layer. 
             CGRect hitTestRect = [layer convertRect:[layer bounds] toLayer:[layer superlayer]];
             
-            CGRect hitBounds = CGRectInset(hitTestRect, -20, -20);
+            CGRect hitBounds = CGRectInset(hitTestRect, -20.0, -20.0);
             if (CGRectContainsPoint(hitBounds, touchLocationInView)) {
                 CFDictionarySetValue(_touchesToLayers, (__bridge CFTypeRef)touch, (__bridge CFTypeRef)layer);                
                 
@@ -132,7 +130,12 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
         CGPoint locationInView = [currentTouch locationInView:self];
         
         CGPoint offsetFromCenter = [(NSValue *)[layerToMove valueForKey:kBTSCubicBezierPathLocationOffset] CGPointValue];
-        CGPoint newPosition = CGPointMake(MIN(width, MAX(0, locationInView.x + offsetFromCenter.x)), MIN(height, MAX(0, locationInView.y + offsetFromCenter.y)));
+        CGFloat x = MAX(0, locationInView.x + offsetFromCenter.x);
+        x = MIN(width, x);
+        
+        CGFloat y = MAX(0, locationInView.y + offsetFromCenter.y);
+        y = MIN(height, y);
+        CGPoint newPosition = CGPointMake(x, y);
         
         [layerToMove setPosition:newPosition];
     }
@@ -170,16 +173,16 @@ static NSString *kBTSCubicBezierPathLocationOffset = @"BTSCubicBezierPathLocatio
     CGFloat midY = CGRectGetMidY([self bounds]);
     
     _beginPointLayer = [BTSEndPointLayer layer];
-    [_beginPointLayer setPosition:CGPointMake(midX, 40)];
+    [_beginPointLayer setPosition:CGPointMake(midX, 40.0)];
     
     _endPointLayer = [BTSEndPointLayer layer];
-    [_endPointLayer setPosition:CGPointMake(midX, [self bounds].size.height - 40)];
+    [_endPointLayer setPosition:CGPointMake(midX, [self bounds].size.height - 40.0)];
     
     _beginPointControlPointLayer = [BTSControlPointLayer layer];
-    [_beginPointControlPointLayer setPosition:CGPointMake(40, midY)];
+    [_beginPointControlPointLayer setPosition:CGPointMake(40.0, midY)];
     
     _endPointControlPointLayer = [BTSControlPointLayer layer];
-    [_endPointControlPointLayer setPosition:CGPointMake([self bounds].size.width - 40, midY)];
+    [_endPointControlPointLayer setPosition:CGPointMake([self bounds].size.width - 40.0, midY)];
     
     // create the initial path
     CGPathRef path = BTSPathCreateForCurrentControlPointPositions(_beginPointLayer, _endPointLayer, _beginPointControlPointLayer, _endPointControlPointLayer);
@@ -208,7 +211,6 @@ CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer,
     CGPathMoveToPoint(path, NULL, [beginPointLayer position].x, [beginPointLayer position].y);
     CGPathAddCurveToPoint(path, NULL, [beginPointControlPointLayer position].x, [beginPointControlPointLayer position].y, [endPointControlPointLayer position].x, [endPointControlPointLayer position].y, [endPointLayer position].x, [endPointLayer position].y);
     return path;
-    
 }
 @end
 
@@ -222,7 +224,7 @@ CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer,
 {
     self = [super init];
     if (self) {
-        [self setBounds:CGRectMake(0, 0, 20, 20)];
+        [self setBounds:CGRectMake(0.0, 0.0, 20.0, 20.0)];
         [self setContentsScale:[[UIScreen mainScreen] scale]];
         [self setNeedsDisplay];
     }
@@ -237,14 +239,14 @@ CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer,
     
     CGFloat centerX = CGRectGetMidX([self bounds]);
     CGFloat centerY = CGRectGetMidY([self bounds]);
-    CGFloat radius = MIN(CGRectGetWidth([self bounds]) / 2, CGRectGetHeight([self bounds]) / 2) - 2;
+    CGFloat radius = MIN(CGRectGetWidth([self bounds]) / 2.0, CGRectGetHeight([self bounds]) / 2.0) - 2.0;
     
-    CGContextAddArc(context, centerX, centerY, radius, 0.0, M_PI * 2, 0);
+    CGContextAddArc(context, centerX, centerY, radius, 0.0, (CGFloat) (M_PI * 2.0), 0);
     CGContextFillPath(context);
     
     CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-    CGContextAddArc(context, centerX, centerY, radius, 0.0, M_PI * 2, 0);
-    CGContextSetLineWidth(context, 2);
+    CGContextAddArc(context, centerX, centerY, radius, 0.0, (CGFloat) (M_PI * 2.0), 0);
+    CGContextSetLineWidth(context, 2.0);
     CGContextStrokePath(context);
 }
 
@@ -256,7 +258,7 @@ CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer,
 {
     self = [super init];
     if (self) {
-        [self setBounds:CGRectMake(0, 0, 30, 20)];
+        [self setBounds:CGRectMake(0.0, 0.0, 30.0, 20.0)];
         [self setContentsScale:[[UIScreen mainScreen] scale]];
         [self setNeedsDisplay];
     }
@@ -271,14 +273,14 @@ CGPathRef BTSPathCreateForCurrentControlPointPositions(CALayer *beginPointLayer,
     
     CGFloat centerX = CGRectGetMidX([self bounds]);
     CGFloat centerY = CGRectGetMidY([self bounds]);
-    CGFloat radius = MIN(CGRectGetWidth([self bounds]) / 2, CGRectGetHeight([self bounds]) / 2) - 2;
+    CGFloat radius = MIN(CGRectGetWidth([self bounds]) / 2.0, CGRectGetHeight([self bounds]) / 2.0) - 2.0;
     
-    CGContextAddArc(context, centerX, centerY, radius, 0.0, M_PI * 2, 0);
+    CGContextAddArc(context, centerX, centerY, radius, 0.0, (CGFloat) (M_PI * 2.0), 0);
     CGContextFillPath(context);
     
     CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-    CGContextAddArc(context, centerX, centerY, radius, 0.0, M_PI * 2, 0);
-    CGContextSetLineWidth(context, 2);
+    CGContextAddArc(context, centerX, centerY, radius, 0.0, (CGFloat) (M_PI * 2.0), 0);
+    CGContextSetLineWidth(context, 2.0);
     CGContextStrokePath(context);
 }
 
