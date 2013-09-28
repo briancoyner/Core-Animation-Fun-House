@@ -10,8 +10,8 @@
 
 @interface BTSSineWaveLayer : CALayer
 
-@property (nonatomic, assign) CGFloat amplitude;
-@property (nonatomic, assign) CGFloat frequency;
-@property (nonatomic, assign) CGFloat phase;
+@property (nonatomic, assign, readwrite) CGFloat amplitude;
+@property (nonatomic, assign, readwrite) CGFloat frequency;
+@property (nonatomic, assign, readwrite) CGFloat phase;
 
 @end

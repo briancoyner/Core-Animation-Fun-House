@@ -6,10 +6,6 @@
 //  Copyright (c) 2011 Brian Coyner. All rights reserved.
 //
 
-#import "BTSLissajousLayer.h"
-
-#define USE_CADISPLAY_LINK 1
-
 static NSString *const kBTSLissajouseLayerAmplitude = @"amplitude";
 static NSString *const kBTSLissajouseLayerA = @"a";
 static NSString *const kBTSLissajouseLayerB = @"b";
@@ -17,9 +13,7 @@ static NSString *const kBTSLissajouseLayerDelta = @"delta";
 
 static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
 
-#ifdef USE_CADISPLAY_LINK
-
-// NOTE: Sometimes the 'needsDisplayForKey:' (as described in 'BTSSineWaveLayer.m') can produce undesired 'flickering' effects.
+// NOTE: Sometimes the 'needsDisplayForKey:' (as described in 'BTSSineWaveLayer.m') can produce undesired 'flickering' effects. 
 //       I have yet to see any undesired 'flickering' effects using the CADisplayLink approach.
 
 @interface BTSLissajousLayer () {
@@ -27,8 +21,6 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
     NSMutableArray *_currentAnimations;
 }
 @end
-
-#endif
 
 @implementation BTSLissajousLayer
 
@@ -46,7 +38,7 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
     return keys;
 }
 
-#pragma mark - Object Life Cycle
+#pragma mark - Layer Drawing
 
 - (id)init
 {
@@ -59,21 +51,18 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
     return self;
 }
 
-#pragma mark - Layer Drawing
-
 - (void)drawInContext:(CGContextRef)context
 {
     [super drawInContext:context];
 
-    [self setContentsScale:[[UIScreen mainScreen] scale]];
-
     CGRect bounds = [self bounds];
 
-    CGContextTranslateCTM(context, CGRectGetWidth(bounds) / 2.0, CGRectGetHeight(bounds) / 2.0);
+    CGContextTranslateCTM(context, CGRectGetWidth(bounds) / 2, CGRectGetHeight(bounds) / 2.0);
 
     BTSDrawCoordinateAxes(context);
-    CGContextSetStrokeColorWithColor(context, [[UIColor blackColor] CGColor]);
+    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
     CGContextSetLineWidth(context, 2.0);
+    CGContextSetShadow(context, CGSizeMake(0.0, 2.5), 5.0);
 
     // The layer redraws the curve using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
@@ -82,14 +71,14 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
     CGFloat b = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerB] floatValue];
     CGFloat delta = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerDelta] floatValue];
 
-    CGFloat increment = TWO_PI / (a * b * 100.0f);
+    CGFloat increment = TWO_PI / (a * b * 40.0f);
     CGMutablePathRef path = CGPathCreateMutable();
 
     BOOL shouldMoveToPoint = YES;
 
     for (CGFloat t = 0.0; t < TWO_PI + increment; t = t + increment) {
-        CGFloat x = (CGFloat)(amplitude * sin(a * t + delta));
-        CGFloat y = (CGFloat)(amplitude * sin(b * t));
+        CGFloat x = amplitude * sin(a * t + delta);
+        CGFloat y = amplitude * sin(b * t);
         if (shouldMoveToPoint) {
             CGPathMoveToPoint(path, NULL, x, y);
             shouldMoveToPoint = NO;
@@ -104,13 +93,11 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
     CFRelease(path);
 }
 
-#pragma mark - CALayer Delegate
-
 - (id<CAAction>)actionForKey:(NSString *)event
 {
     // Called when a property changes.
 
-    if ([[BTSLissajousLayer keyPathsForDynamicProperties] containsObject:event]) {
+    if ([[BTSLissajousLayer keyPathsForDynamicProperties] member:event]) {
 
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
         NSValue *valueForKey = [[self presentationLayer] valueForKey:event];
@@ -128,13 +115,13 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
 
 #pragma mark - Animation Delegate Callbacks
 
-- (void)animationDidStart:(CAAnimation *)animation
+- (void)animationDidStart:(CAAnimation *)anim
 {
-    if ([animation isKindOfClass:[CAPropertyAnimation class]]) {
+    if ([anim isKindOfClass:[CAPropertyAnimation class]]) {
         NSSet *internalKeys = [BTSLissajousLayer keyPathsForDynamicProperties];
-        if ([internalKeys containsObject:[(CAPropertyAnimation *)animation keyPath]]) {
+        if ([internalKeys member:[(CAPropertyAnimation *)anim keyPath]]) {
 
-            [_currentAnimations addObject:animation];
+            [_currentAnimations addObject:anim];
             if (_displayLink == nil) {
                 _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationTimerFired:)];
                 [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];

@@ -1,5 +1,5 @@
 # Core Animation Fun House
-## Created by Brian Coyner, 2011
+## Created by Brian Coyner, 2011, 2012, 2013
 
 A suite of sample code showing how to use various aspects of the Core Animation framework
 

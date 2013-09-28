@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-// Convenience function to calculate a point within the superlayer's coordinate system representing the given layer's anchor point.
+// Convenience function to calculate a point within the super layer's coordinate system representing the given layer's anchor point.
 // - x = superLayerBounds.size.width * anchorPoint.x
 // - y = superLayerBounds.size.height * anchorPoint.y
 

@@ -9,72 +9,59 @@
 #import "BTSBezierPathViewController.h"
 #import "BTSCubicBezierPathView.h"
 
-#import <QuartzCore/QuartzCore.h>
+@interface BTSBezierPathViewController () {
 
-@interface BTSBezierPathViewController() {
-    
     // store a reference so we can modify the title ("Animate", "Stop")
-    __weak IBOutlet UIBarButtonItem *animateButton;
-    
-    BOOL animating;
+    IBOutlet UIBarButtonItem *__weak _animateButton;
+
+    BOOL _animating;
     CALayer *_layer;
 }
 
 @end
 
-@implementation BTSBezierPathViewController 
+@implementation BTSBezierPathViewController
 
-static void * kBezierPathChangedContextKey = &kBezierPathChangedContextKey;
+static void *kBezierPathChangedContextKey = &kBezierPathChangedContextKey;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // This is the layer that will animate along the path when the user presses the "animateButton".
+
+    // This is the layer that will animate along the path when the user presses the "_animateButton".
     _layer = [CALayer layer];
     [_layer setContentsScale:[[UIScreen mainScreen] scale]];
-    [_layer setContents:(__bridge id)[UIImage imageNamed:@"american-flag.png"].CGImage];
+    [_layer setContents:(id)[[UIImage imageNamed:@"american-flag.png"] CGImage]];
     [_layer setBounds:CGRectMake(0.0, 0.0, 60.0, 60.0)];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (IBAction)toggleAnimation:(id)sender
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
 
-- (void)viewDidUnload {
-    animateButton = nil;
+    if (_animating) { // currently animation... so stop.
 
-    [super viewDidUnload];
-}
-
-- (IBAction)toggleAnimation:(id)sender {
-    
-    if (animating) { // currently animation... so stop.
-        
         [CATransaction setCompletionBlock:^{
             [_layer removeAllAnimations];
             [_layer removeFromSuperlayer];
         }];
         [_layer setOpacity:0.0];
-        
-        [animateButton setTitle:@"Animate"];
-        animating = NO;
-        
-    } else {  // not animating... so start
-        
+
+        [_animateButton setTitle:@"Animate"];
+        _animating = NO;
+    } else {  // not _animating... so start
+
         [[[self view] layer] addSublayer:_layer];
         [_layer setOpacity:1.0];
-        
+
         BTSCubicBezierPathView *pathView = (BTSCubicBezierPathView *)[self view];
         [self updateAnimationForPath:[pathView bezierPath]];
-        [animateButton setTitle:@"Stop"];
-        animating = YES;
+        [_animateButton setTitle:@"Stop"];
+        _animating = YES;
     }
 }
 
 - (void)updateAnimationForPath:(CGPathRef)path
-{   
+{
     // To animate along a path we use a key frame animation (just like in the "Follow the Path" example). 
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     [animation setPath:path];
@@ -83,6 +70,7 @@ static void * kBezierPathChangedContextKey = &kBezierPathChangedContextKey;
     [animation setDuration:5.0];
     [animation setDelegate:self];
     [animation setCalculationMode:kCAAnimationPaced];
+
     [_layer addAnimation:animation forKey:@"bezierPathAnimation"];
 }
 

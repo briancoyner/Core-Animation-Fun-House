@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BTSAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface BTSAppDelegate : UIResponder<UIApplicationDelegate>
 
 @end

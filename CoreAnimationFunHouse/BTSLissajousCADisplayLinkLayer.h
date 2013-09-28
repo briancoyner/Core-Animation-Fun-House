@@ -10,9 +10,9 @@
 
 @interface BTSLissajousLayer : CALayer
 
-@property (nonatomic, assign, readwrite) CGFloat amplitude;
-@property (nonatomic, assign, readwrite) CGFloat a;
-@property (nonatomic, assign, readwrite) CGFloat b;
-@property (nonatomic, assign, readwrite) CGFloat delta;
+@property (nonatomic, assign) CGFloat amplitude;
+@property (nonatomic, assign) CGFloat a;
+@property (nonatomic, assign) CGFloat b;
+@property (nonatomic, assign) CGFloat delta;
 
 @end
