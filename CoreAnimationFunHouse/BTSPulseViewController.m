@@ -38,7 +38,7 @@ static NSString *const kBTSPulseAnimation = @"BTSPulseAnimation";
     // Create a new layer and add it to the view's layer
     _layer = [CALayer layer];
     [_layer setContentsScale:[[UIScreen mainScreen] scale]];
-    [_layer setContents:(id)[[UIImage imageNamed:@"american-flag.png"] CGImage]];
+    [_layer setContents:(__bridge id)[[UIImage imageNamed:@"american-flag.png"] CGImage]];
     [_layer setBounds:CGRectMake(0.0, 0.0, 150.0, 150.0)];
 
     UIView *view = [self view];
@@ -65,9 +65,11 @@ static NSString *const kBTSPulseAnimation = @"BTSPulseAnimation";
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+
     [self endAnimatingLayer];
 }
-#pragma mark - User Interactions
+
+#pragma mark - User Interaction Methods
 
 - (IBAction)animationEnabledChanged:(id)sender
 {

@@ -15,7 +15,7 @@ static NSString *const kBTSWiggleTransformTranslationXAnimation = @"BTSWiggleTra
 
 - (void)bts_startWiggling
 {
-    // For asthetics... don't reset the animations if we are already "wiggling"... otherwise the layer jerks
+    // For aesthetics, don't reset the animations if we are already "wiggling"... otherwise the layer jerks
     if ([self animationForKey:kBTSWiggleTransformAnimation] != nil && [self animationForKey:kBTSWiggleTransformTranslationXAnimation] != nil) {
         return;
     }

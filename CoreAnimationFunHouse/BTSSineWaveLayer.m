@@ -20,16 +20,17 @@ static NSString *const kBTSSineWaveLayerPhase = @"phase";
 
 @implementation BTSSineWaveLayer
 
-// NOTE: This shows a technique for capturing screen refreshes that allow the layer to redraw.
+// NOTE: This code shows a technique for capturing screen refreshes using CADisplayLink.
 //       You can actually remove the CADisplayLink and simply override the 'needsDisplayForKey:'
-//       method to return the dynamic property key names. This example, thought, I show how to capture 
+//       method to return the dynamic property key names. This example, though, I show how to capture
 //       a "screen refresh". This technique is useful if you need more logic than simply "re-drawing".
 //       See my 'Core Animation Pie Chart' example on GitHub.
 //
 // NOTE: Sometimes the 'needsDisplayForKey:' can produce undesired 'flickering' effects. I have yet to 
 //       see any undesired 'flickering' effects using the CADisplayLink approach.
 
-// CALayer calls 'actionForKey:' for any custom dynmamic property. 
+// CALayer calls 'actionForKey:' for any custom dynamic property.
+
 @dynamic phase;
 @dynamic frequency;
 @dynamic amplitude;
@@ -71,9 +72,10 @@ static NSString *const kBTSSineWaveLayerPhase = @"phase";
 
     // The layer redraws the content using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
-    CGFloat amplitude = [[(NSValue *)[self presentationLayer] valueForKey:kBTSSineWaveLayerAmplitude] floatValue];
-    CGFloat frequency = [[(NSValue *)[self presentationLayer] valueForKey:kBTSSineWaveLayerFrequency] floatValue];
-    CGFloat phase = [[(NSValue *)[self presentationLayer] valueForKey:kBTSSineWaveLayerPhase] floatValue];
+    id presentationLayer = [self presentationLayer];
+    CGFloat amplitude = [[(NSValue *)presentationLayer valueForKey:kBTSSineWaveLayerAmplitude] floatValue];
+    CGFloat frequency = [[(NSValue *)presentationLayer valueForKey:kBTSSineWaveLayerFrequency] floatValue];
+    CGFloat phase = [[(NSValue *)presentationLayer valueForKey:kBTSSineWaveLayerPhase] floatValue];
 
     unsigned int stepCount = (unsigned int)CGRectGetWidth(bounds);
     for (int t = 0; t <= stepCount; t++) {

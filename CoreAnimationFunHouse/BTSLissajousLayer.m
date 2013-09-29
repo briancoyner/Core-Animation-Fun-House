@@ -50,11 +50,9 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
 
 - (id)init
 {
-
     self = [super init];
     if (self) {
         _currentAnimations = [[NSMutableArray alloc] initWithCapacity:3];
-        [self setContentsScale:[[UIScreen mainScreen] scale]];;
     }
     return self;
 }
@@ -64,8 +62,6 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
 - (void)drawInContext:(CGContextRef)context
 {
     [super drawInContext:context];
-
-    [self setContentsScale:[[UIScreen mainScreen] scale]];
 
     CGRect bounds = [self bounds];
 
@@ -77,10 +73,11 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
 
     // The layer redraws the curve using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
-    CGFloat amplitude = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerAmplitude] floatValue];
-    CGFloat a = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerA] floatValue];
-    CGFloat b = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerB] floatValue];
-    CGFloat delta = [[(NSValue *)[self presentationLayer] valueForKey:kBTSLissajouseLayerDelta] floatValue];
+    id presentationLayer = [self presentationLayer];
+    CGFloat amplitude = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerAmplitude] floatValue];
+    CGFloat a = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerA] floatValue];
+    CGFloat b = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerB] floatValue];
+    CGFloat delta = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerDelta] floatValue];
 
     CGFloat increment = TWO_PI / (a * b * 100.0f);
     CGMutablePathRef path = CGPathCreateMutable();

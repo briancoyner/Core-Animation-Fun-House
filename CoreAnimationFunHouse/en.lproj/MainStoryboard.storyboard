@@ -553,7 +553,7 @@
                                     <action selector="animationDurationChanged:" destination="4Zr-Ak-fxo" eventType="valueChanged" id="Mws-fF-XiE"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Animation (0.2s)" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JCj-fw-K2k">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Animation (0.2)" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JCj-fw-K2k">
                                 <rect key="frame" x="20" y="433" width="122" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -561,28 +561,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUR-ik-jR9">
-                                <rect key="frame" x="150" y="392" width="51" height="31"/>
+                                <rect key="frame" x="150" y="388" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="autoreversesChanged:" destination="T3d-CG-uk8" eventType="valueChanged" id="N4u-O8-nHF"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Auto Reverse" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="84J-Ln-sB5">
-                                <rect key="frame" x="20" y="397" width="122" height="21"/>
+                                <rect key="frame" x="20" y="393" width="122" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ya6-Rb-Yq3">
-                                <rect key="frame" x="150" y="357" width="51" height="31"/>
+                                <rect key="frame" x="150" y="349" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="toggleAnchorPoint:" destination="T3d-CG-uk8" eventType="valueChanged" id="ZKK-F4-07P"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Anchor Point" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="YYU-NA-18F">
-                                <rect key="frame" x="20" y="360" width="122" height="21"/>
+                                <rect key="frame" x="20" y="356" width="122" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="cwk-lV-Bgv"/>
@@ -598,18 +598,20 @@
                             <constraint firstItem="LUR-ik-jR9" firstAttribute="leading" secondItem="ya6-Rb-Yq3" secondAttribute="leading" id="BsT-br-ciu"/>
                             <constraint firstItem="YYU-NA-18F" firstAttribute="leading" secondItem="3Ao-fC-Ftt" secondAttribute="leading" constant="20" symbolic="YES" id="CT8-T4-4Ir"/>
                             <constraint firstAttribute="trailing" secondItem="dba-VJ-NRg" secondAttribute="trailing" constant="20" symbolic="YES" id="P75-T6-Q9s"/>
+                            <constraint firstItem="84J-Ln-sB5" firstAttribute="leading" secondItem="3Ao-fC-Ftt" secondAttribute="leading" constant="20" id="RWm-Wf-aXh"/>
                             <constraint firstItem="LUR-ik-jR9" firstAttribute="leading" secondItem="dba-VJ-NRg" secondAttribute="leading" id="W1l-In-6sG"/>
                             <constraint firstItem="84J-Ln-sB5" firstAttribute="top" secondItem="YYU-NA-18F" secondAttribute="bottom" constant="16" id="XS7-85-FOF"/>
-                            <constraint firstItem="LUR-ik-jR9" firstAttribute="top" secondItem="ya6-Rb-Yq3" secondAttribute="bottom" constant="4" id="bR7-Sd-a4t"/>
+                            <constraint firstItem="LUR-ik-jR9" firstAttribute="top" secondItem="ya6-Rb-Yq3" secondAttribute="bottom" constant="8" symbolic="YES" id="bR7-Sd-a4t"/>
                             <constraint firstItem="84J-Ln-sB5" firstAttribute="leading" secondItem="JCj-fw-K2k" secondAttribute="leading" id="czI-WZ-J4Q"/>
                             <constraint firstItem="YYU-NA-18F" firstAttribute="width" secondItem="84J-Ln-sB5" secondAttribute="width" id="f0A-lH-V2l"/>
                             <constraint firstItem="JCj-fw-K2k" firstAttribute="centerY" secondItem="dba-VJ-NRg" secondAttribute="centerY" id="f5T-i3-wFW"/>
                             <constraint firstItem="84J-Ln-sB5" firstAttribute="leading" secondItem="YYU-NA-18F" secondAttribute="leading" id="gii-zZ-QaE"/>
-                            <constraint firstItem="dba-VJ-NRg" firstAttribute="top" secondItem="LUR-ik-jR9" secondAttribute="bottom" constant="4" id="iMp-FY-tbU"/>
+                            <constraint firstItem="dba-VJ-NRg" firstAttribute="top" secondItem="LUR-ik-jR9" secondAttribute="bottom" constant="8" symbolic="YES" id="iMp-FY-tbU"/>
                             <constraint firstItem="LUR-ik-jR9" firstAttribute="leading" secondItem="84J-Ln-sB5" secondAttribute="trailing" constant="8" symbolic="YES" id="iPm-Ny-1nc"/>
                             <constraint firstItem="YYU-NA-18F" firstAttribute="width" secondItem="JCj-fw-K2k" secondAttribute="width" id="oPQ-CM-dts"/>
                             <constraint firstItem="LUR-ik-jR9" firstAttribute="centerY" secondItem="84J-Ln-sB5" secondAttribute="centerY" id="pDq-t4-wMr"/>
                             <constraint firstItem="dba-VJ-NRg" firstAttribute="leading" secondItem="JCj-fw-K2k" secondAttribute="trailing" constant="8" symbolic="YES" id="qml-8s-KH6"/>
+                            <constraint firstItem="JCj-fw-K2k" firstAttribute="leading" secondItem="3Ao-fC-Ftt" secondAttribute="leading" constant="20" id="us5-uI-rK7"/>
                             <constraint firstAttribute="bottom" secondItem="dba-VJ-NRg" secondAttribute="bottom" constant="20" symbolic="YES" id="vON-To-gwV"/>
                         </constraints>
                     </view>

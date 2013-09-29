@@ -20,18 +20,13 @@
     IBOutlet UISwitch *_enableAnimations;
 }
 
-@property (strong, nonatomic) IBOutlet UILabel *animationDurationLabel;
+@property (nonatomic, weak, readwrite) IBOutlet UILabel *animationDurationLabel;
 
 @end
 
 @implementation BTSBasicLayerPropertiesViewController
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark - View lifecycle
+#pragma mark - UIView lifecycle
 
 - (void)viewDidLoad
 {
@@ -59,8 +54,8 @@
     [anchorPointLayer setPosition:BTSCalculateAnchorPointPositionForLayer(_layer)];
     [_layer addSublayer:anchorPointLayer];
 
-
-    CGRect frame = [[self view] bounds];
+    UIView *view = [self view];
+    CGRect frame = [view bounds];
 
     // Because the CALayer anchor point is {0.5,0.0}, we can simply set X to the center of the width.
     // This centers the layer on the X axis.
@@ -70,7 +65,7 @@
     CGFloat y = 80.0;
     [_layer setPosition:CGPointMake(x, y)];
 
-    [[[self view] layer] addSublayer:_layer];
+    [[view layer] addSublayer:_layer];
 }
 
 - (IBAction)animationDurationChanged:(id)sender

@@ -32,7 +32,6 @@
     self = [super init];
     if (self) {
         [self setBounds:CGRectMake(0.0, 0.0, 20.0, 20.0)];
-        
         [self setNeedsDisplay];
     }
     return self;
@@ -43,7 +42,7 @@
 - (void)drawInContext:(CGContextRef)context
 {
     [self setContentsScale:[[UIScreen mainScreen] scale]];
-    
+
     CGRect bounds = [self bounds];
     CGPoint center = {CGRectGetMidX(bounds), CGRectGetMidY(bounds)};
 

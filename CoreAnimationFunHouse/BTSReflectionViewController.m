@@ -16,11 +16,13 @@
 
 @implementation BTSReflectionViewController
 
-#pragma mark - View Life Cycle
+#pragma mark - UIView Life Cycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    UIView *view = [self view];
 
     //
     // Yes, this is a very long method. I find it easier to explain what is happening by 
@@ -56,7 +58,8 @@
     // - use the x center point to make the math easy (place in center of view)
     // - use the y upper point to position the layer 10 points below the top of the view (just a little bit of padding)
     [replicatorLayer setAnchorPoint:CGPointMake(0.5, 0.0)];
-    [replicatorLayer setPosition:CGPointMake([self view].frame.size.width / 2.0, 80.0)];
+
+    [replicatorLayer setPosition:CGPointMake(view.frame.size.width / 2.0, 80.0)];
 
     // We need two instances: 
     //   1) the main image layer 
@@ -114,7 +117,7 @@
     // Next we create a layer that displays the American flag image.
     _imageLayer = [CALayer layer];
     [_imageLayer setContentsScale:[[UIScreen mainScreen] scale]];
-    [_imageLayer setContents:(id)[image CGImage]];
+    [_imageLayer setContents:(__bridge id)[image CGImage]];
     [_imageLayer setBounds:CGRectMake(0.0, 0.0, [image size].width, [image size].height)];
     [_imageLayer setAnchorPoint:CGPointMake(0.0, 0.0)];
 
@@ -124,18 +127,18 @@
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     [gradientLayer setContentsScale:[[UIScreen mainScreen] scale]];
     [gradientLayer setColors:@[
-        (id)[[[UIColor whiteColor] colorWithAlphaComponent:0.25] CGColor],
-        (id)[[UIColor whiteColor] CGColor]
+        (__bridge id)[[[UIColor whiteColor] colorWithAlphaComponent:0.25] CGColor],
+        (__bridge id)[[UIColor whiteColor] CGColor]
     ]];
 
     // Remember that the reflected layer is half the size, which is why the height of the gradient layer is cut in half.
     [gradientLayer setBounds:CGRectMake(0.0, 0.0, replicatorLayer.frame.size.width, [image size].height * 0.5 + 1.0)];
     [gradientLayer setAnchorPoint:CGPointMake(0.5, 0.0)];
-    [gradientLayer setPosition:CGPointMake([self view].frame.size.width / 2, [image size].height + 80.0)];
+    [gradientLayer setPosition:CGPointMake(view.frame.size.width / 2, [image size].height + 80.0)];
     [gradientLayer setZPosition:1]; // make sure the gradient is placed on top of the reflection.
 
-    [[[self view] layer] addSublayer:replicatorLayer];
-    [[[self view] layer] addSublayer:gradientLayer];
+    [[view layer] addSublayer:replicatorLayer];
+    [[view layer] addSublayer:gradientLayer];
 
     // One final (and fun step): 
     //   Create a text layer that is a sublayer of the image layer.
@@ -152,9 +155,9 @@
     [_imageLayer addSublayer:textLayer];
 
     // When the user taps, start _animating the image's text layer up and down.
-    [[self view] setUserInteractionEnabled:YES];
-    [[self view] setMultipleTouchEnabled:YES];
-    [[self view] addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(animateTextLayer:)]];
+    [view setUserInteractionEnabled:YES];
+    [view setMultipleTouchEnabled:YES];
+    [view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(animateTextLayer:)]];
 }
 
 - (void)animateTextLayer:(UIGestureRecognizer *)recognizer
@@ -164,8 +167,8 @@
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position.y"];
 
     CGFloat halfBoxHeight = [textLayer frame].size.height / 2.0;
-    [animation setFromValue:[NSNumber numberWithFloat:[textLayer frame].origin.y + halfBoxHeight]];
-    [animation setToValue:[NSNumber numberWithFloat:halfBoxHeight]];
+    [animation setFromValue:@([textLayer frame].origin.y + halfBoxHeight)];
+    [animation setToValue:@(halfBoxHeight)];
     [animation setDuration:3.0];
     [animation setRepeatCount:MAXFLOAT];
     [animation setAutoreverses:YES];

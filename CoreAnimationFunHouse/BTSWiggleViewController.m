@@ -20,7 +20,7 @@
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
 
     CALayer *layer = [CALayer layer];
-    [layer setContents:(id)[[UIImage imageNamed:@"american-flag.png"] CGImage]];
+    [layer setContents:(__bridge id)[[UIImage imageNamed:@"american-flag.png"] CGImage]];
     [layer setContentsScale:[[UIScreen mainScreen] scale]];
     [layer setBounds:CGRectMake(0.0, 0.0, 200.0, 200.0)];
 
@@ -49,7 +49,7 @@
 - (void)startWiggling:(UIGestureRecognizer *)gesture
 {
     if ([gesture state] == UIGestureRecognizerStateBegan) {
-        CALayer *wiggleLayer = [[[[self view] layer] sublayers] lastObject];
+        CALayer *wiggleLayer = [self wiggleLayer];
         [wiggleLayer bts_startWiggling];
     }
 }
@@ -58,9 +58,14 @@
 {
     // remember discrete gestures are simply recognized
     if ([gesture state] == UIGestureRecognizerStateRecognized) {
-        CALayer *wiggleLayer = [[[[self view] layer] sublayers] lastObject];
+        CALayer *wiggleLayer= [self wiggleLayer];
         [wiggleLayer bts_stopWiggling];
     }
+}
+
+- (CALayer *)wiggleLayer
+{
+    return [[[[self view] layer] sublayers] lastObject];
 }
 
 @end
