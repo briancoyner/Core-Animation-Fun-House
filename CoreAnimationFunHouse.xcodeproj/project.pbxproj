@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D0060411435FB2700615004 /* BTSPulseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0060401435FB2700615004 /* BTSPulseViewController.m */; };
-		5D24F6F314D7267D00ECA6E8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D24F6F214D7267D00ECA6E8 /* Accelerate.framework */; };
+		5D0D7E4C1BD7C41C0062CD26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D7E4B1BD7C41C0062CD26 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 		5D284BA1144BB57E0000650E /* BTSSineWaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D284BA0144BB57E0000650E /* BTSSineWaveLayer.m */; };
 		5D284BA3144BB7A20000650E /* BTSSineWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D284BA2144BB7A20000650E /* BTSSineWaveView.m */; };
 		5D31F6ED143BEA0E008ECE3D /* BTSReflectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */; };
@@ -30,7 +30,6 @@
 		5D6FBC84142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6FBC83142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m */; };
 		5D6FBC86142BBB2F0015A945 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6FBC85142BBB2F0015A945 /* QuartzCore.framework */; };
 		5D9396541447C7270049EBBC /* BTSAnchorPointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */; };
-		5DB66D1217F708720075BCCA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DB66D1117F708720075BCCA /* Default-568h@2x.png */; };
 		5DB66D1417F7087D0075BCCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB66D1317F7087D0075BCCA /* Images.xcassets */; };
 		5DD391F6144A16FD00545708 /* BTSSineWaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD391E7144A0AA600545708 /* BTSSineWaveViewController.m */; };
 		5DFB0B4B1448A74D001DF61F /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB0B4A1448A74D001DF61F /* readme.md */; };
@@ -39,6 +38,7 @@
 /* Begin PBXFileReference section */
 		5D00603F1435FB2700615004 /* BTSPulseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSPulseViewController.h; sourceTree = "<group>"; };
 		5D0060401435FB2700615004 /* BTSPulseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSPulseViewController.m; sourceTree = "<group>"; };
+		5D0D7E4B1BD7C41C0062CD26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		5D24F6F214D7267D00ECA6E8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		5D284B9F144BB5310000650E /* BTSSineWaveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSSineWaveLayer.h; sourceTree = "<group>"; };
 		5D284BA0144BB57E0000650E /* BTSSineWaveLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSSineWaveLayer.m; sourceTree = "<group>"; };
@@ -77,7 +77,6 @@
 		5D6FBC85142BBB2F0015A945 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5D9396521447C7270049EBBC /* BTSAnchorPointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSAnchorPointLayer.h; sourceTree = "<group>"; };
 		5D9396531447C7270049EBBC /* BTSAnchorPointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSAnchorPointLayer.m; sourceTree = "<group>"; };
-		5DB66D1117F708720075BCCA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		5DB66D1317F7087D0075BCCA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5DB66D1517F709A20075BCCA /* BTSCoreGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSCoreGraphics.h; sourceTree = "<group>"; };
 		5DD391E6144A0AA600545708 /* BTSSineWaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSSineWaveViewController.h; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D24F6F314D7267D00ECA6E8 /* Accelerate.framework in Frameworks */,
 				5D6FBC86142BBB2F0015A945 /* QuartzCore.framework in Frameworks */,
 				5D6FBC66142BB9A80015A945 /* UIKit.framework in Frameworks */,
 				5D6FBC68142BB9A80015A945 /* Foundation.framework in Frameworks */,
@@ -166,7 +164,7 @@
 		5D6FBC6C142BB9A80015A945 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DB66D1117F708720075BCCA /* Default-568h@2x.png */,
+				5D0D7E4B1BD7C41C0062CD26 /* Default-568h@2x.png */,
 				5D583FDA1458F0970036131C /* american-flag.png */,
 				5D6FBC6D142BB9A80015A945 /* CoreAnimationFunHouse-Info.plist */,
 				5D6FBC6E142BB9A80015A945 /* InfoPlist.strings */,
@@ -287,7 +285,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BTS;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Brian Coyner";
 			};
 			buildConfigurationList = 5D6FBC5B142BB9A80015A945 /* Build configuration list for PBXProject "CoreAnimationFunHouse" */;
@@ -316,8 +314,8 @@
 				5DB66D1417F7087D0075BCCA /* Images.xcassets in Resources */,
 				5D6FBC79142BB9A80015A945 /* MainStoryboard.storyboard in Resources */,
 				5DFB0B4B1448A74D001DF61F /* readme.md in Resources */,
-				5DB66D1217F708720075BCCA /* Default-568h@2x.png in Resources */,
 				5D583FDB1458F0970036131C /* american-flag.png in Resources */,
+				5D0D7E4C1BD7C41C0062CD26 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,11 +380,15 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -407,7 +409,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -427,10 +428,13 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -445,7 +449,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -456,12 +459,10 @@
 		5D6FBC80142BB9A80015A945 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreAnimationFunHouse/CoreAnimationFunHouse-Prefix.pch";
 				INFOPLIST_FILE = "CoreAnimationFunHouse/CoreAnimationFunHouse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.briancoyner.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -471,12 +472,10 @@
 		5D6FBC81142BB9A80015A945 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoreAnimationFunHouse/CoreAnimationFunHouse-Prefix.pch";
 				INFOPLIST_FILE = "CoreAnimationFunHouse/CoreAnimationFunHouse-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.briancoyner.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

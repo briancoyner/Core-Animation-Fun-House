@@ -115,7 +115,7 @@
     layerBounds.size.width = (layerBounds.size.width == layerBounds.size.height) ? 250.0 : 200.0;
     [_layer setBounds:layerBounds];
 
-    BTSAnchorPointLayer *anchorPointLayer = [[_layer sublayers] objectAtIndex:0];
+    BTSAnchorPointLayer *anchorPointLayer = (BTSAnchorPointLayer *)[[_layer sublayers] objectAtIndex:0];
     [anchorPointLayer setPosition:BTSCalculateAnchorPointPositionForLayer(_layer)];
 }
 
