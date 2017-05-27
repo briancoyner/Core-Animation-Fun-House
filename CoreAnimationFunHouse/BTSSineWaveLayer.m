@@ -12,7 +12,7 @@ static NSString *const kBTSSineWaveLayerAmplitude = @"amplitude";
 static NSString *const kBTSSineWaveLayerFrequency = @"frequency";
 static NSString *const kBTSSineWaveLayerPhase = @"phase";
 
-@interface BTSSineWaveLayer () {
+@interface BTSSineWaveLayer ()<CAAnimationDelegate> {
     CADisplayLink *_displayLink;
     NSMutableArray *_currentAnimations;
 }
@@ -63,7 +63,7 @@ static NSString *const kBTSSineWaveLayerPhase = @"phase";
 
     CGRect bounds = [self bounds];
 
-    CGContextTranslateCTM(context, 0.0, CGRectGetHeight(bounds) / 2.0);
+    CGContextTranslateCTM(context, 0.0, (CGFloat)(CGRectGetHeight(bounds) / 2.0));
 
     BTSDrawCoordinateAxes(context);
 
@@ -73,9 +73,9 @@ static NSString *const kBTSSineWaveLayerPhase = @"phase";
     // The layer redraws the content using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
     id presentationLayer = [self presentationLayer];
-    CGFloat amplitude = [[(NSValue *)presentationLayer valueForKey:kBTSSineWaveLayerAmplitude] floatValue];
-    CGFloat frequency = [[(NSValue *)presentationLayer valueForKey:kBTSSineWaveLayerFrequency] floatValue];
-    CGFloat phase = [[(NSValue *)presentationLayer valueForKey:kBTSSineWaveLayerPhase] floatValue];
+    CGFloat amplitude = [[presentationLayer valueForKey:kBTSSineWaveLayerAmplitude] floatValue];
+    CGFloat frequency = [[presentationLayer valueForKey:kBTSSineWaveLayerFrequency] floatValue];
+    CGFloat phase = [[presentationLayer valueForKey:kBTSSineWaveLayerPhase] floatValue];
 
     unsigned int stepCount = (unsigned int)CGRectGetWidth(bounds);
     for (int t = 0; t <= stepCount; t++) {

@@ -58,7 +58,7 @@
 {
     // remember discrete gestures are simply recognized
     if ([gesture state] == UIGestureRecognizerStateRecognized) {
-        CALayer *wiggleLayer= [self wiggleLayer];
+        CALayer *wiggleLayer = [self wiggleLayer];
         [wiggleLayer bts_stopWiggling];
     }
 }

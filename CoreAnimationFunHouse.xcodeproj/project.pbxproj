@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D0060411435FB2700615004 /* BTSPulseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0060401435FB2700615004 /* BTSPulseViewController.m */; };
-		5D0D7E4C1BD7C41C0062CD26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D7E4B1BD7C41C0062CD26 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		5D0D7E4C1BD7C41C0062CD26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D7E4B1BD7C41C0062CD26 /* Default-568h@2x.png */; };
 		5D284BA1144BB57E0000650E /* BTSSineWaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D284BA0144BB57E0000650E /* BTSSineWaveLayer.m */; };
 		5D284BA3144BB7A20000650E /* BTSSineWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D284BA2144BB7A20000650E /* BTSSineWaveView.m */; };
 		5D31F6ED143BEA0E008ECE3D /* BTSReflectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D31F6EC143BEA0E008ECE3D /* BTSReflectionViewController.m */; };
@@ -285,7 +285,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BTS;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Brian Coyner";
 			};
 			buildConfigurationList = 5D6FBC5B142BB9A80015A945 /* Build configuration list for PBXProject "CoreAnimationFunHouse" */;
@@ -378,8 +378,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -426,8 +428,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

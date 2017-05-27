@@ -22,7 +22,7 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
 // NOTE: Sometimes the 'needsDisplayForKey:' (as described in 'BTSSineWaveLayer.m') can produce undesired 'flickering' effects.
 //       I have yet to see any undesired 'flickering' effects using the CADisplayLink approach.
 
-@interface BTSLissajousLayer () {
+@interface BTSLissajousLayer ()<CAAnimationDelegate> {
     CADisplayLink *_displayLink;
     NSMutableArray *_currentAnimations;
 }
@@ -65,7 +65,7 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
 
     CGRect bounds = [self bounds];
 
-    CGContextTranslateCTM(context, CGRectGetWidth(bounds) / 2.0, CGRectGetHeight(bounds) / 2.0);
+    CGContextTranslateCTM(context, (CGFloat)(CGRectGetWidth(bounds) / 2.0), (CGFloat)(CGRectGetHeight(bounds) / 2.0));
 
     BTSDrawCoordinateAxes(context);
     CGContextSetStrokeColorWithColor(context, [[UIColor blackColor] CGColor]);
@@ -74,10 +74,10 @@ static const CGFloat TWO_PI = (CGFloat)(M_PI * 2.0f);
     // The layer redraws the curve using the current animation's interpolated values. The interpolated
     // values are retrieved from the layer's "presentationLayer".
     id presentationLayer = [self presentationLayer];
-    CGFloat amplitude = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerAmplitude] floatValue];
-    CGFloat a = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerA] floatValue];
-    CGFloat b = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerB] floatValue];
-    CGFloat delta = [[(NSValue *)presentationLayer valueForKey:kBTSLissajouseLayerDelta] floatValue];
+    CGFloat amplitude = [[presentationLayer valueForKey:kBTSLissajouseLayerAmplitude] floatValue];
+    CGFloat a = [[presentationLayer valueForKey:kBTSLissajouseLayerA] floatValue];
+    CGFloat b = [[presentationLayer valueForKey:kBTSLissajouseLayerB] floatValue];
+    CGFloat delta = [[presentationLayer valueForKey:kBTSLissajouseLayerDelta] floatValue];
 
     CGFloat increment = TWO_PI / (a * b * 100.0f);
     CGMutablePathRef path = CGPathCreateMutable();

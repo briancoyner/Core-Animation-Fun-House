@@ -32,7 +32,7 @@ static NSString *const kBTSWiggleTransformTranslationXAnimation = @"BTSWiggleTra
     [rotationAnimation setAutoreverses:YES];
 
     [rotationAnimation setFromValue:@(M_PI / 100.0)];
-    [rotationAnimation setToValue:@(-M_PI/ 100.0)];
+    [rotationAnimation setToValue:@(-M_PI / 100.0)];
 
     // Create the translation animation along the X axis. This gives is a slight sliding effect, which looks nice.
     CABasicAnimation *translationXAnimation = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];

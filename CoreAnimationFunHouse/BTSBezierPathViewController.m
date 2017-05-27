@@ -9,7 +9,7 @@
 #import "BTSBezierPathViewController.h"
 #import "BTSCubicBezierPathView.h"
 
-@interface BTSBezierPathViewController () {
+@interface BTSBezierPathViewController ()<CAAnimationDelegate> {
 
     // store a reference so we can modify the title ("Animate", "Stop")
     IBOutlet UIBarButtonItem *__weak _animateButton;
