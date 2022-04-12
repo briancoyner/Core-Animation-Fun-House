@@ -33,6 +33,7 @@
 		5DB66D1417F7087D0075BCCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB66D1317F7087D0075BCCA /* Images.xcassets */; };
 		5DD391F6144A16FD00545708 /* BTSSineWaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD391E7144A0AA600545708 /* BTSSineWaveViewController.m */; };
 		5DFB0B4B1448A74D001DF61F /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB0B4A1448A74D001DF61F /* readme.md */; };
+		BA7F9801280514A400167FBA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7F9800280514A400167FBA /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +72,6 @@
 		5D6FBC73142BB9A80015A945 /* CoreAnimationFunHouse-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreAnimationFunHouse-Prefix.pch"; sourceTree = "<group>"; };
 		5D6FBC74142BB9A80015A945 /* BTSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSAppDelegate.h; sourceTree = "<group>"; };
 		5D6FBC75142BB9A80015A945 /* BTSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSAppDelegate.m; sourceTree = "<group>"; };
-		5D6FBC78142BB9A80015A945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5D6FBC82142BBA430015A945 /* BTSBasicLayerPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSBasicLayerPropertiesViewController.h; sourceTree = "<group>"; };
 		5D6FBC83142BBA430015A945 /* BTSBasicLayerPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSBasicLayerPropertiesViewController.m; sourceTree = "<group>"; };
 		5D6FBC85142BBB2F0015A945 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -83,6 +83,8 @@
 		5DD391E7144A0AA600545708 /* BTSSineWaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSSineWaveViewController.m; sourceTree = "<group>"; };
 		5DD391ED144A0B2200545708 /* BTSSineWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSSineWaveView.h; sourceTree = "<group>"; };
 		5DFB0B4A1448A74D001DF61F /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
+		BA7F9800280514A400167FBA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BA7F98022805171700167FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				5D6FBC6E142BB9A80015A945 /* InfoPlist.strings */,
 				5D6FBC71142BB9A80015A945 /* main.m */,
 				5D6FBC73142BB9A80015A945 /* CoreAnimationFunHouse-Prefix.pch */,
+				BA7F9800280514A400167FBA /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			path = CoreAnimationFunHouse;
@@ -285,15 +288,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BTS;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Brian Coyner";
 			};
 			buildConfigurationList = 5D6FBC5B142BB9A80015A945 /* Build configuration list for PBXProject "CoreAnimationFunHouse" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 5D6FBC56142BB9A80015A945;
 			productRefGroup = 5D6FBC62142BB9A80015A945 /* Products */;
@@ -316,6 +320,7 @@
 				5DFB0B4B1448A74D001DF61F /* readme.md in Resources */,
 				5D583FDB1458F0970036131C /* american-flag.png in Resources */,
 				5D0D7E4C1BD7C41C0062CD26 /* Default-568h@2x.png in Resources */,
+				BA7F9801280514A400167FBA /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +364,7 @@
 		5D6FBC77142BB9A80015A945 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5D6FBC78142BB9A80015A945 /* en */,
+				BA7F98022805171700167FBA /* Base */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -383,8 +389,9 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -417,6 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
@@ -427,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -439,8 +448,9 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -465,6 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;

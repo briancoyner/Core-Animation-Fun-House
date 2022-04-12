@@ -40,12 +40,12 @@ static void *kBezierPathChangedContextKey = &kBezierPathChangedContextKey;
     if (_animating) { // currently animation... so stop.
 
         [CATransaction setCompletionBlock:^{
-            [_layer removeAllAnimations];
-            [_layer removeFromSuperlayer];
+            [self->_layer removeAllAnimations];
+            [self->_layer removeFromSuperlayer];
         }];
         [_layer setOpacity:0.0];
 
-        [_animateButton setTitle:@"Animate"];
+        [_animateButton setTitle:NSLocalizedString(@"Animate", nil)];
         _animating = NO;
     } else {  // not _animating... so start
 
@@ -55,7 +55,7 @@ static void *kBezierPathChangedContextKey = &kBezierPathChangedContextKey;
         [_layer setOpacity:1.0];
 
         [self updateAnimationForPath:[pathView bezierPath]];
-        [_animateButton setTitle:@"Stop"];
+        [_animateButton setTitle:NSLocalizedString(@"Stop", nil)];
         _animating = YES;
     }
 }
