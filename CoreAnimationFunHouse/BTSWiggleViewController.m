@@ -17,7 +17,15 @@
 {
     [super viewDidLoad];
 
-    [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    UIColor *backgroundColor;
+
+    if (@available(iOS 13, *)) {
+        backgroundColor = [UIColor systemGroupedBackgroundColor];
+    } else {
+        backgroundColor = [UIColor groupTableViewBackgroundColor];
+    }
+
+    [[self view] setBackgroundColor:backgroundColor];
 
     CALayer *layer = [CALayer layer];
     [layer setContents:(__bridge id)[[UIImage imageNamed:@"american-flag.png"] CGImage]];
